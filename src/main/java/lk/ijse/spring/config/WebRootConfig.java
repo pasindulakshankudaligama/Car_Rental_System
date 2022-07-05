@@ -1,4 +1,4 @@
-package lk.ijse.spring.cofig;
+package lk.ijse.spring.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
