@@ -26,11 +26,11 @@ public class Rent_Detail {
     private double damage_Cost;
     private String status;
 
-   /* @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "rent_Id",referencedColumnName = "rent_Id",nullable = false)
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "rent_Id",referencedColumnName = "rent_Id",nullable = false,insertable = false,updatable = false)
     private Rent rent;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "registration_Number",referencedColumnName = "registration_Number",nullable = false)
-    private Vehicle vehicle;*/
+    @JoinColumn(name = "registration_Number",referencedColumnName = "registration_Number",nullable = false,insertable = false,updatable = false)
+    private Vehicle vehicle;
 }

@@ -12,7 +12,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Data
 public class Rent_Detail_PK implements Serializable {
-
     private String rent_Id;
     private String registration_Number;
 }
