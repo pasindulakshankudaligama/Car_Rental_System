@@ -19,13 +19,11 @@ public class Driver_Schedule {
     private String staff_Id;
     @Id
     private String registration_Number;
-   /* @Id
-    private String registration_Number;*/
+    @Id
+    private String rent_Id;
   /* @JsonFormat(pattern = "yyyy-MM-dd")*/
     private LocalDate rent_Date;
     private LocalDate return_Date;
-
-
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "staff_Id",referencedColumnName = "staff_Id",nullable = false)
@@ -35,7 +33,7 @@ public class Driver_Schedule {
     @JoinColumn(name = "registration_Number",referencedColumnName = "registration_Number",nullable = false)
     private Vehicle vehicle;
 
-   /* @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "registration_Number",referencedColumnName = "registration_Number",nullable = false)
-    private Vehicle vehicle;*/
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "rent_Id",referencedColumnName = "rent_Id",nullable = false)
+    private Rent rent;
 }
