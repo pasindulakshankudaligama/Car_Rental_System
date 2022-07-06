@@ -13,10 +13,11 @@ import java.time.LocalDate;
 @Data
 @Entity
 @ToString
+@IdClass(Rent_Detail_PK.class)
 public class Rent_Detail {
     @Id
     private String rent_Id;
-    //@Id
+    @Id
     private String registration_Number;
     private LocalDate rent_Date;
     private LocalDate return_Date;

@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @ToString
+
 public class Driver_Schedule {
     @Id
     private String staff_Id;
