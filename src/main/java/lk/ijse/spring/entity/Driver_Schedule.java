@@ -14,26 +14,26 @@ import java.time.LocalDate;
 @Data
 @Entity
 @ToString
-
+@IdClass(Drive_Schedule_PK.class)
 public class Driver_Schedule {
     @Id
     private String staff_Id;
-   // @Id
+    @Id
     private String registration_Number;
- //  @Id
+    @Id
     private String rent_Id;
     private LocalDate rent_Date;
     private LocalDate return_Date;
 
-   /* @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "staff_Id",referencedColumnName = "staff_Id",nullable = false)
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "staff_Id",referencedColumnName = "staff_Id",nullable = false,insertable = false,updatable = false)
     private Staff staff;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "registration_Number",referencedColumnName = "registration_Number",nullable = false)
+    @JoinColumn(name = "registration_Number",referencedColumnName = "registration_Number",nullable = false,insertable = false,updatable = false)
     private Vehicle vehicle;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "rent_Id",referencedColumnName = "rent_Id",nullable = false)
-    private Rent rent;*/
+    @JoinColumn(name = "rent_Id",referencedColumnName = "rent_Id",nullable = false,insertable = false,updatable = false)
+    private Rent rent;
 }
