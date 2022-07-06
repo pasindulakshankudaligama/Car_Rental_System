@@ -22,10 +22,7 @@ public class Rent {
     private String status;
     private String reason;
 
-
-
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "id",referencedColumnName = "id",nullable = false)
     private Rent rent;
-
 }
