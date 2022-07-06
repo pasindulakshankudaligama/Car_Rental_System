@@ -16,13 +16,13 @@ import java.time.LocalDate;
 public class Rent {
     @Id
     private String rent_Id;
-    @Id
+   // @Id
     private String id;
     private LocalDate date;
     private String status;
     private String reason;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    /*@ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "id",referencedColumnName = "id",nullable = false)
-    private Rent rent;
+    private Rent rent;*/
 }

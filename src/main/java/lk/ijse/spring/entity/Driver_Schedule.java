@@ -17,15 +17,15 @@ import java.time.LocalDate;
 public class Driver_Schedule {
     @Id
     private String staff_Id;
-    @Id
+    //@Id
     private String registration_Number;
-    @Id
+   // @Id
     private String rent_Id;
   /* @JsonFormat(pattern = "yyyy-MM-dd")*/
     private LocalDate rent_Date;
     private LocalDate return_Date;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+   /* @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "staff_Id",referencedColumnName = "staff_Id",nullable = false)
     private Staff staff;
 
@@ -35,5 +35,5 @@ public class Driver_Schedule {
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "rent_Id",referencedColumnName = "rent_Id",nullable = false)
-    private Rent rent;
+    private Rent rent;*/
 }

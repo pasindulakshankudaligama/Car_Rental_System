@@ -1,5 +1,4 @@
 package lk.ijse.spring.entity;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,15 +15,14 @@ import javax.persistence.ManyToOne;
 @Entity
 @ToString
 public class Vehicle_IMG {
-
     @Id
     private String img_Id;
-    @Id
+   // @Id
     private String registration_Number;
     private String description;
 
-    @ManyToOne
+  /*  @ManyToOne
     @JoinColumn(name = "registration_Number",referencedColumnName = "registration_Number",insertable = false,updatable = false)
-    private Vehicle vehicle;
+    private Vehicle vehicle;*/
 
 }

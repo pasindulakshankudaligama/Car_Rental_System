@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class Rent_Detail {
     @Id
     private String rent_Id;
-    @Id
+    //@Id
     private String registration_Number;
     private LocalDate rent_Date;
     private LocalDate return_Date;
@@ -25,11 +25,11 @@ public class Rent_Detail {
     private double damage_Cost;
     private String status;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+   /* @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "rent_Id",referencedColumnName = "rent_Id",nullable = false)
     private Rent rent;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "registration_Number",referencedColumnName = "registration_Number",nullable = false)
-    private Vehicle vehicle;
+    private Vehicle vehicle;*/
 }

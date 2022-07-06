@@ -15,9 +15,9 @@ import javax.persistence.*;
 public class Vehicle {
     @Id
     private String registration_Number;
-    @Id
+   // @Id
     private String rate_Id;
-    @Id
+  //  @Id
     private String vehicle_Type_Id;
     private String colour;
     private int no_Of_Passengers;
@@ -28,12 +28,12 @@ public class Vehicle {
     private String running_Km;
 
 
-
+/*
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "rate_Id",referencedColumnName = "rate_Id",nullable = false)
     private Rates rates;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "vehicle_Type_Id",referencedColumnName = "vehicle_Type_Id",nullable = false)
-    private Vehicle_Type vehicle_type;
+    private Vehicle_Type vehicle_type;*/
 }
