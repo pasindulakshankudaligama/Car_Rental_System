@@ -18,11 +18,10 @@ import java.time.LocalDate;
 public class Driver_Schedule {
     @Id
     private String staff_Id;
-    //@Id
-    private String registration_Number;
    // @Id
+    private String registration_Number;
+ //  @Id
     private String rent_Id;
-  /* @JsonFormat(pattern = "yyyy-MM-dd")*/
     private LocalDate rent_Date;
     private LocalDate return_Date;
 
