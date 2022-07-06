@@ -23,6 +23,11 @@ public class Customer {
     private String mobile_Number;
     private String driving_License_Number;
     /*@JsonFormat(pattern = )*/
-    private byte id_Img;
+   /* private byte id_Img;*/
+    private String  nIC_Number;
+    private String email;
+    private String password;
+
+
 
 }
