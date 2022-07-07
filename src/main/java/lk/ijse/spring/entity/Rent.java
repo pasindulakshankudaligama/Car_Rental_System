@@ -18,8 +18,6 @@ import java.util.List;
 public class Rent {
     @Id
     private String rent_Id;
-   /* @Id
-    private String id;*/
     private LocalDate date;
     private String status;
     private String reason;
