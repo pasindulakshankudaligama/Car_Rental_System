@@ -27,5 +27,10 @@ public class CustomerController {
         customerService.deleteCustomer(id);
         return new ResponseUtil(200,"Deleted",null);
     }
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO){
+        customerService.updateCustomer(customerDTO);
+        return new ResponseUtil(200,"Updated",null);
+    }
 
 }
