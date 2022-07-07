@@ -17,5 +17,8 @@ public class Slip_IMG {
     private String slip_IMG_Id;
     private String description;
 
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "rent_Id",referencedColumnName = "rent_Id",nullable = false)
+    private Rent rent;
 
 }
