@@ -1,6 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.RatesDTO;
+import lk.ijse.spring.entity.Rates;
 import lk.ijse.spring.repo.RateRepo;
 import lk.ijse.spring.service.RateService;
 import org.modelmapper.ModelMapper;
@@ -22,7 +23,11 @@ public class RateServiceImpl implements RateService {
 
     @Override
     public void saveRates(RatesDTO dto) {
-
+        if (!rateRepo.existsById(dto.getRate_Id())) {
+            rateRepo.save(mapper.map(dto, Rates.class));
+        }else{
+            throw new RuntimeException("Rate Already Exist..!");
+        }
     }
 
     @Override
