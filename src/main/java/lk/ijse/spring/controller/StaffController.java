@@ -27,4 +27,9 @@ public class StaffController {
         staffService.deleteStaff(id);
         return new ResponseUtil(200,"Deleted",null);
     }
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateStaff(@RequestBody StaffDTO dto){
+        staffService.updateStaff(dto);
+        return new ResponseUtil(200,"Updated",null);
+    }
 }
