@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.attribute.standard.Media;
+
 @RestController
 @RequestMapping("staff")
 @CrossOrigin
@@ -31,5 +33,9 @@ public class StaffController {
     public ResponseUtil updateStaff(@RequestBody StaffDTO dto){
         staffService.updateStaff(dto);
         return new ResponseUtil(200,"Updated",null);
+    }
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchStaff(@PathVariable String id){
+        return new ResponseUtil(200,"OK",staffService.searchStaff(id));
     }
 }
