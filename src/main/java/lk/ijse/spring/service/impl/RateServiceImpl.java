@@ -1,11 +1,13 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.RatesDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Rates;
 import lk.ijse.spring.repo.RateRepo;
 import lk.ijse.spring.service.RateService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,6 +54,7 @@ public class RateServiceImpl implements RateService {
 
     @Override
     public List<RatesDTO> getAllRates() {
-        return null;
+        return mapper.map(rateRepo.findAll(),new TypeToken<List<RatesDTO>>(){
+        }.getType());
     }
 }
