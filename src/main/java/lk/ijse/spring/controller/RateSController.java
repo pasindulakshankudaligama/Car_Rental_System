@@ -33,4 +33,8 @@ public class RateSController {
         rateService.updateRates(ratesDTO);
         return new ResponseUtil(200,"Updated",null);
     }
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllCustomers(){
+        return new ResponseUtil(200,"OK",rateService.getAllRates());
+    }
 }
