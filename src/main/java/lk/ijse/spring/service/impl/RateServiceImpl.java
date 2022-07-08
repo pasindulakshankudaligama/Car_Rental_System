@@ -1,6 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.RatesDTO;
+import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Rates;
 import lk.ijse.spring.repo.RateRepo;
 import lk.ijse.spring.service.RateService;
@@ -42,7 +43,11 @@ public class RateServiceImpl implements RateService {
 
     @Override
     public void updateRates(RatesDTO dto) {
-
+        if (rateRepo.existsById(dto.getRate_Id())) {
+            rateRepo.save(mapper.map(dto, Rates.class));
+        } else {
+            throw new RuntimeException("No Such Rate To Update..! Please Check the ID..!");
+        }
     }
 
     @Override
