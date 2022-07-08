@@ -2,6 +2,7 @@ package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.StaffDTO;
+import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Staff;
 import lk.ijse.spring.repo.StaffRepo;
 import lk.ijse.spring.service.StaffService;
@@ -42,7 +43,11 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public void updateStaff(StaffDTO dto) {
-
+        if (repo.existsById(dto.getStaff_Id())) {
+            repo.save(mapper.map(dto, Staff.class));
+        }else {
+            throw new RuntimeException("No Such Staff To Update..! Please Check the ID..!");
+        }
     }
 
     @Override
