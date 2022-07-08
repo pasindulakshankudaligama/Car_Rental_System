@@ -38,4 +38,8 @@ public class StaffController {
     public ResponseUtil searchStaff(@PathVariable String id){
         return new ResponseUtil(200,"OK",staffService.searchStaff(id));
     }
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllStaff(){
+        return new ResponseUtil(200,"OK",staffService.getAllStaff());
+    }
 }
