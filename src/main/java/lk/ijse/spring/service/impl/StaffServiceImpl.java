@@ -7,6 +7,7 @@ import lk.ijse.spring.entity.Staff;
 import lk.ijse.spring.repo.StaffRepo;
 import lk.ijse.spring.service.StaffService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,6 +63,7 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public List<CustomerDTO> getAllStaff() {
-        return null;
+        return mapper.map(repo.findAll(),new TypeToken<List<StaffDTO>>(){
+        }.getType());
     }
 }
