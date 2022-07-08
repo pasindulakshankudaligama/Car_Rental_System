@@ -32,8 +32,13 @@ public class RateServiceImpl implements RateService {
 
     @Override
     public void deleteRates(String id) {
-
+        if (rateRepo.existsById(id)) {
+            rateRepo.deleteById(id);
+        } else {
+            throw new RuntimeException("Please check the Rate Id.. No Rate..!");
+        }
     }
+
 
     @Override
     public void updateRates(RatesDTO dto) {
