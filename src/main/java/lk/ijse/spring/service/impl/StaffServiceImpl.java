@@ -52,7 +52,12 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public StaffDTO searchStaff(String id) {
-        return null;
+        if (repo.existsById(id)) {
+            return mapper.map(repo.findById(id).get(),StaffDTO.class);
+        }else{
+            throw new RuntimeException("No Staff For " + id + " ..!");
+        }
+
     }
 
     @Override
