@@ -32,4 +32,8 @@ public class VehicleIMGController {
         vehicleIMGService.updateVehicleIMG(vehicle_imgdto);
         return new ResponseUtil(200,"Updated",null);
     }
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllVehicleIMG(){
+        return new ResponseUtil(200,"OK",vehicleIMGService.getAllVehicleIMGs());
+    }
 }
