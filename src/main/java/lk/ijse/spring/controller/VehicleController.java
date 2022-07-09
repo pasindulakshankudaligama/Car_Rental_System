@@ -32,5 +32,8 @@ public class VehicleController {
         vehicleService.updateVehicle(vehicleDTO);
         return new ResponseUtil(200,"Updated",null);
     }
-
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchVehicle(@PathVariable String id){
+        return new ResponseUtil(200,"OK",vehicleService.searchVehicle(id));
+    }
 }
