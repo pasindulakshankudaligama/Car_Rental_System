@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.VehicleDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Vehicle;
@@ -51,7 +52,11 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public VehicleDTO searchVehicle(String id) {
-        return null;
+        if (repo.existsById(id)) {
+            return mapper.map(repo.findById(id).get(), VehicleDTO.class);
+        } else {
+            throw new RuntimeException("No Vehicle For " + id + " ..!");
+        }
     }
 
     @Override
