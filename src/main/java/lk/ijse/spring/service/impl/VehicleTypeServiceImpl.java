@@ -31,7 +31,11 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
 
     @Override
     public void deleteVehicleType(String id) {
-
+        if (repo.existsById(id)) {
+            repo.deleteById(id);
+        }else{
+            throw new RuntimeException("Please check theVehicle Type Id.. No Vehicle Type..!");
+        }
     }
 
     @Override
