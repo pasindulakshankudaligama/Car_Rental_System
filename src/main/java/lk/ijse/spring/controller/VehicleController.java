@@ -22,5 +22,10 @@ public class VehicleController {
         vehicleService.saveVehicle(vehicleDTO);
         return new ResponseUtil(200,"Saved",null);
     }
+    @DeleteMapping(params={"id"},produces =MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteVehicle(@RequestParam String id){
+        vehicleService.deleteVehicle(id);
+        return new ResponseUtil(200,"Deleted",null);
+    }
 
 }
