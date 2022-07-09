@@ -36,4 +36,8 @@ public class VehicleController {
     public ResponseUtil searchVehicle(@PathVariable String id){
         return new ResponseUtil(200,"OK",vehicleService.searchVehicle(id));
     }
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllVehicles(){
+        return new ResponseUtil(200,"OK",vehicleService.getAllVehicles());
+    }
 }
