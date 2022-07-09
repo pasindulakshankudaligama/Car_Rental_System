@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.DriverDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Driver;
@@ -51,7 +52,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public DriverDTO searchDriver(String id) {
-        return null;
+        if (driverRepo.existsById(id)) {
+            return mapper.map(driverRepo.findById(id).get(), DriverDTO.class);
+        } else {
+            throw new RuntimeException("No Driver For " + id + " ..!");
+        }
     }
 
     @Override
