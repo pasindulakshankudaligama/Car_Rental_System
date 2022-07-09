@@ -1,11 +1,13 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.Slip_IMGDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Slip_IMG;
 import lk.ijse.spring.repo.SlipIMGRepo;
 import lk.ijse.spring.service.SlipIMGService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,6 +53,7 @@ public class SlipIMGServiceImpl implements SlipIMGService {
 
     @Override
     public List<Slip_IMGDTO> getAllSlipIMGs() {
-        return null;
+        return mapper.map(slipIMGRepo.findAll(),new TypeToken<List<Slip_IMGDTO>>(){
+        }.getType());
     }
 }
