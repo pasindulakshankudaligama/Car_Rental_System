@@ -35,4 +35,8 @@ public class DriverController {
     public ResponseUtil searchDriver(@PathVariable String id){
         return new ResponseUtil(200,"OK",driverService.searchDriver(id));
     }
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllDrivers(){
+        return new ResponseUtil(200,"OK",driverService.getAllDrivers());
+    }
 }
