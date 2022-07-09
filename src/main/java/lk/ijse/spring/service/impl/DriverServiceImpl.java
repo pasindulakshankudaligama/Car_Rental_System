@@ -32,7 +32,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void deleteDriver(String id) {
-
+        if (driverRepo.existsById(id)) {
+            driverRepo.deleteById(id);
+        } else {
+            throw new RuntimeException("Please check the Driver Id.. No Driver..!");
+        }
     }
 
     @Override
