@@ -1,8 +1,6 @@
 package lk.ijse.spring.service.impl;
 
-import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.VehicleDTO;
-import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Vehicle;
 import lk.ijse.spring.repo.VehicleRepo;
 import lk.ijse.spring.service.VehicleService;
@@ -62,7 +60,7 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public List<VehicleDTO> getAllVehicles() {
-        return mapper.map(repo.findAll(),new TypeToken<List<VehicleDTO>>(){
+        return mapper.map(repo.findAll(), new TypeToken<List<VehicleDTO>>() {
         }.getType());
     }
 }
