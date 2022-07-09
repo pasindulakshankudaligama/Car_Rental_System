@@ -41,7 +41,11 @@ public class VehicleIMGServiceImpl implements VehicleIMGService {
 
     @Override
     public void updateVehicleIMG(Vehicle_IMGDTO dto) {
-
+        if (repo.existsById(dto.getImg_Id())) {
+            repo.save(mapper.map(dto, Vehicle_IMG.class));
+        } else {
+            throw new RuntimeException("No Such Vehicle_IMG To Update..! Please Check the ID..!");
+        }
     }
 
     @Override
