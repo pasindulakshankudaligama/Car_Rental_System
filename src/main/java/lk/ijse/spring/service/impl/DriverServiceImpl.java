@@ -1,6 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.service.DriverService;
@@ -41,7 +42,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void updateDriver(DriverDTO dto) {
-
+        if (driverRepo.existsById(dto.getDriver_Id())) {
+            driverRepo.save(mapper.map(dto, Driver.class));
+        } else {
+            throw new RuntimeException("No Such Driver To Update..! Please Check the ID..!");
+        }
     }
 
     @Override
