@@ -1,6 +1,8 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.Slip_IMGDTO;
+import lk.ijse.spring.entity.Customer;
+import lk.ijse.spring.entity.Slip_IMG;
 import lk.ijse.spring.repo.SlipIMGRepo;
 import lk.ijse.spring.service.SlipIMGService;
 import org.modelmapper.ModelMapper;
@@ -22,7 +24,11 @@ public class SlipIMGServiceImpl implements SlipIMGService {
 
     @Override
     public void saveSlipIMG(Slip_IMGDTO dto) {
-
+        if (!slipIMGRepo.existsById(dto.getSlip_IMG_Id())) {
+            slipIMGRepo.save(mapper.map(dto, Slip_IMG.class));
+        } else {
+            throw new RuntimeException("Slip_IMG Already Exist..!");
+        }
     }
 
     @Override
