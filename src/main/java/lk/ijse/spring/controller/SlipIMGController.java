@@ -27,4 +27,9 @@ public class SlipIMGController {
         slipIMGService.deleteSlipIMG(id);
         return new ResponseUtil(200,"Deleted",null);
     }
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateSlipImg(@RequestBody Slip_IMGDTO slip_imgdto){
+        slipIMGService.updateSlipIMG(slip_imgdto);
+        return new ResponseUtil(200,"Updated",null);
+    }
 }
