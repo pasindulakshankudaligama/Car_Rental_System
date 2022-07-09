@@ -22,4 +22,9 @@ public class VehicleIMGController {
         vehicleIMGService.saveVehicleIMG(vehicle_imgdto);
         return new ResponseUtil(200,"Saved",null);
     }
+    @DeleteMapping(params={"id"},produces =MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteVehicleIMG(@RequestParam String id){
+        vehicleIMGService.deleteVehicleIMG(id);
+        return new ResponseUtil(200,"Deleted",null);
+    }
 }
