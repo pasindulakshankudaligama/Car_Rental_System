@@ -32,4 +32,8 @@ public class SlipIMGController {
         slipIMGService.updateSlipIMG(slip_imgdto);
         return new ResponseUtil(200,"Updated",null);
     }
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllSlipImg(){
+        return new ResponseUtil(200,"OK",slipIMGService.getAllSlipIMGs());
+    }
 }
