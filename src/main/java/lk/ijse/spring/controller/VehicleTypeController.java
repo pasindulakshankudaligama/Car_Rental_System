@@ -32,4 +32,5 @@ public class VehicleTypeController {
         vehicleTypeService.updateVehicleType(vehicleTypeDTO);
         return new ResponseUtil(200,"Updated",null);
     }
+
 }
