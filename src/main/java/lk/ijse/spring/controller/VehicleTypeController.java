@@ -32,5 +32,9 @@ public class VehicleTypeController {
         vehicleTypeService.updateVehicleType(vehicleTypeDTO);
         return new ResponseUtil(200,"Updated",null);
     }
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllVehicleType(){
+        return new ResponseUtil(200,"OK",vehicleTypeService.getAllVehicleType());
+    }
 
 }
