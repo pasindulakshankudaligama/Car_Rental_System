@@ -42,7 +42,11 @@ public class SlipIMGServiceImpl implements SlipIMGService {
 
     @Override
     public void updateSlipIMG(Slip_IMGDTO dto) {
-
+        if (slipIMGRepo.existsById(dto.getSlip_IMG_Id())) {
+            slipIMGRepo.save(mapper.map(dto, Slip_IMG.class));
+        } else {
+            throw new RuntimeException("No Such Slip_IMG To Update..! Please Check the ID..!");
+        }
     }
 
     @Override
