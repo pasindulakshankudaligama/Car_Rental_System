@@ -41,6 +41,11 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public void updateVehicle(VehicleDTO dto) {
+        if (repo.existsById(dto.getRegistration_Number())) {
+            repo.save(mapper.map(dto, Vehicle.class));
+        } else {
+            throw new RuntimeException("No Such Vehicle To Update..! Please Check the Registration Number..!");
+        }
 
     }
 
