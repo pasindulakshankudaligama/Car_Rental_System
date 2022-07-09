@@ -21,4 +21,9 @@ public class DriverController {
         driverService.saveDriver(driverDTO);
         return new ResponseUtil(200,"Saved",null);
     }
+    @DeleteMapping(params={"id"},produces =MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteDriver(@RequestParam String id){
+        driverService.deleteDriver(id);
+        return new ResponseUtil(200,"Deleted",null);
+    }
 }
