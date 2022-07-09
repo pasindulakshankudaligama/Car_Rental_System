@@ -22,4 +22,9 @@ public class SlipIMGController {
         slipIMGService.saveSlipIMG(slip_imgdto);
         return new ResponseUtil(200,"Saved",null);
     }
+    @DeleteMapping(params={"id"},produces =MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteSlipImg(@RequestParam String id){
+        slipIMGService.deleteSlipIMG(id);
+        return new ResponseUtil(200,"Deleted",null);
+    }
 }
