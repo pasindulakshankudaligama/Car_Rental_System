@@ -33,7 +33,11 @@ public class SlipIMGServiceImpl implements SlipIMGService {
 
     @Override
     public void deleteSlipIMG(String id) {
-
+        if (slipIMGRepo.existsById(id)) {
+            slipIMGRepo.deleteById(id);
+        } else {
+            throw new RuntimeException("Please check the Slip_IMG Id.. No Slip_IMG..!");
+        }
     }
 
     @Override
