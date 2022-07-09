@@ -27,4 +27,9 @@ public class VehicleIMGController {
         vehicleIMGService.deleteVehicleIMG(id);
         return new ResponseUtil(200,"Deleted",null);
     }
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateVehicleIMG(@RequestBody Vehicle_IMGDTO vehicle_imgdto){
+        vehicleIMGService.updateVehicleIMG(vehicle_imgdto);
+        return new ResponseUtil(200,"Updated",null);
+    }
 }
