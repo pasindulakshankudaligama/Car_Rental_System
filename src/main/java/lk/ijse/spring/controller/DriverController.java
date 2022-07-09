@@ -31,4 +31,8 @@ public class DriverController {
         driverService.updateDriver(driverDTO);
         return new ResponseUtil(200,"Updated",null);
     }
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchDriver(@PathVariable String id){
+        return new ResponseUtil(200,"OK",driverService.searchDriver(id));
+    }
 }
