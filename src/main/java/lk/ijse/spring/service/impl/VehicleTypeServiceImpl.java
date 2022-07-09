@@ -1,0 +1,46 @@
+package lk.ijse.spring.service.impl;
+
+import lk.ijse.spring.dto.Vehicle_TypeDTO;
+import lk.ijse.spring.entity.Vehicle_Type;
+import lk.ijse.spring.repo.Vehicle_TypeRepo;
+import lk.ijse.spring.service.VehicleTypeService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.List;
+@Service
+@Transactional
+public class VehicleTypeServiceImpl implements VehicleTypeService {
+
+    @Autowired
+    private Vehicle_TypeRepo repo;
+
+    @Autowired
+    private ModelMapper mapper;
+
+    @Override
+    public void saveVehicleType(Vehicle_TypeDTO dto) {
+        if (!repo.existsById(dto.getVehicle_Type_Id())) {
+            repo.save(mapper.map(dto, Vehicle_Type.class));
+        }else{
+            throw new RuntimeException("Vehicle_Type Already Exists...!");
+        }
+    }
+
+    @Override
+    public void deleteVehicleType(String id) {
+
+    }
+
+    @Override
+    public void updateVehicleType(Vehicle_TypeDTO dto) {
+
+    }
+
+    @Override
+    public List<Vehicle_TypeDTO> getAllVehicleType() {
+        return null;
+    }
+}
