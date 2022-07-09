@@ -26,13 +26,17 @@ public class VehicleServiceImpl implements VehicleService {
         if (!repo.existsById(dto.getRegistration_Number())) {
             repo.save(mapper.map(dto, Vehicle.class));
         } else {
-            throw new RuntimeException("Customer Already Exist..!");
+            throw new RuntimeException("Vehicle Already Exist..!");
         }
     }
 
     @Override
     public void deleteVehicle(String id) {
-
+        if (repo.existsById(id)) {
+            repo.deleteById(id);
+        } else {
+            throw new RuntimeException("Please check the Vehicle Id.. No Vehicle..!");
+        }
     }
 
     @Override
