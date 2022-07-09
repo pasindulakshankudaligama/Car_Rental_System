@@ -26,4 +26,9 @@ public class DriverController {
         driverService.deleteDriver(id);
         return new ResponseUtil(200,"Deleted",null);
     }
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateDriver(@RequestBody DriverDTO driverDTO){
+        driverService.updateDriver(driverDTO);
+        return new ResponseUtil(200,"Updated",null);
+    }
 }
