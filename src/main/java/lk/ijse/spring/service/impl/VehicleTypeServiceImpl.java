@@ -40,7 +40,11 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
 
     @Override
     public void updateVehicleType(Vehicle_TypeDTO dto) {
-
+        if (repo.existsById(dto.getVehicle_Type_Id())) {
+            repo.save(mapper.map(dto,Vehicle_Type.class));
+        }else{
+            throw new RuntimeException("No Such Vehicle Type to update..! Please check the Id..!");
+        }
     }
 
     @Override
