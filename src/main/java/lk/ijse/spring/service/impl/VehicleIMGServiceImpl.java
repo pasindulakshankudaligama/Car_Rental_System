@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.Vehicle_IMGDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Vehicle_IMG;
@@ -7,6 +8,7 @@ import lk.ijse.spring.repo.CustomerRepo;
 import lk.ijse.spring.repo.VehicleIMGRepo;
 import lk.ijse.spring.service.VehicleIMGService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,6 +52,8 @@ public class VehicleIMGServiceImpl implements VehicleIMGService {
 
     @Override
     public List<Vehicle_IMGDTO> getAllVehicleIMGs() {
-        return null;
+        return mapper.map(repo.findAll(),new TypeToken<List<Vehicle_IMGDTO>>(){
+        }.getType());
+
     }
 }
