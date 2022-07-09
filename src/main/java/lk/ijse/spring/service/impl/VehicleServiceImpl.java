@@ -1,6 +1,8 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.VehicleDTO;
+import lk.ijse.spring.entity.Customer;
+import lk.ijse.spring.entity.Vehicle;
 import lk.ijse.spring.repo.VehicleRepo;
 import lk.ijse.spring.service.VehicleService;
 import org.modelmapper.ModelMapper;
@@ -21,7 +23,11 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public void saveVehicle(VehicleDTO dto) {
-
+        if (!repo.existsById(dto.getRegistration_Number())) {
+            repo.save(mapper.map(dto, Vehicle.class));
+        } else {
+            throw new RuntimeException("Customer Already Exist..!");
+        }
     }
 
     @Override
