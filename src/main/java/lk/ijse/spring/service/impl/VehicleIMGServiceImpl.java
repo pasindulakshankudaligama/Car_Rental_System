@@ -32,7 +32,11 @@ public class VehicleIMGServiceImpl implements VehicleIMGService {
 
     @Override
     public void deleteVehicleIMG(String id) {
-
+        if (repo.existsById(id)) {
+            repo.deleteById(id);
+        } else {
+            throw new RuntimeException("Please check the Vehicle_IMG Id.. No Vehicle_IMG..!");
+        }
     }
 
     @Override
