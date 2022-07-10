@@ -26,4 +26,9 @@ public class RentController {
         rentService.deleteRent(id);
         return new ResponseUtil(200,"Deleted",null);
     }
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateRent(@RequestBody RentDTO rentDTO){
+        rentService.updateRent(rentDTO);
+        return new ResponseUtil(200,"Updated",null);
+    }
 }
