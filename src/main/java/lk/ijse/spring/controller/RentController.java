@@ -31,4 +31,8 @@ public class RentController {
         rentService.updateRent(rentDTO);
         return new ResponseUtil(200,"Updated",null);
     }
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchRent(@PathVariable String id){
+        return new ResponseUtil(200,"OK",rentService.searchRent(id));
+    }
 }
