@@ -23,7 +23,7 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public void saveRent(RentDTO dto) {
-        if (!rentRepo.existsById(dto.getId())) {
+        if (!rentRepo.existsById(dto.getRent_Id())) {
             rentRepo.save(mapper.map(dto, Rent.class));
         } else {
             throw new RuntimeException("Rent Already Exist..!");
@@ -41,7 +41,11 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public void updateRent(RentDTO dto) {
-
+        if (rentRepo.existsById(dto.getRent_Id())) {
+            rentRepo.save(mapper.map(dto, Rent.class));
+        } else {
+            throw new RuntimeException("No Such Rent To Update..! Please Check the Rent ID..!");
+        }
     }
 
     @Override
