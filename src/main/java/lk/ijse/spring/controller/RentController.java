@@ -35,4 +35,8 @@ public class RentController {
     public ResponseUtil searchRent(@PathVariable String id){
         return new ResponseUtil(200,"OK",rentService.searchRent(id));
     }
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllRents(){
+        return new ResponseUtil(200,"OK",rentService.getAllRents());
+    }
 }
