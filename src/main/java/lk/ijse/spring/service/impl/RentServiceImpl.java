@@ -7,6 +7,7 @@ import lk.ijse.spring.entity.Rent;
 import lk.ijse.spring.repo.RentRepo;
 import lk.ijse.spring.service.RentService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,6 +61,7 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public List<RentDTO> getAllRents() {
-        return null;
+        return mapper.map(rentRepo.findAll(),new TypeToken<List<RentDTO>>(){
+        }.getType());
     }
 }
