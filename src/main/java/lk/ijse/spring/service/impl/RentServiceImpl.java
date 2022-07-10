@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.RentDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Rent;
@@ -50,7 +51,11 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public RentDTO searchRent(String id) {
-        return null;
+        if (rentRepo.existsById(id)) {
+            return mapper.map(rentRepo.findById(id).get(), RentDTO.class);
+        } else {
+            throw new RuntimeException("No Rent For " + id + " ..!");
+        }
     }
 
     @Override
