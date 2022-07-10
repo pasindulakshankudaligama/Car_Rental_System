@@ -1,8 +1,6 @@
 package lk.ijse.spring.service.impl;
 
-import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.RentDTO;
-import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Rent;
 import lk.ijse.spring.repo.RentRepo;
 import lk.ijse.spring.service.RentService;
@@ -61,7 +59,7 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public List<RentDTO> getAllRents() {
-        return mapper.map(rentRepo.findAll(),new TypeToken<List<RentDTO>>(){
+        return mapper.map(rentRepo.findAll(), new TypeToken<List<RentDTO>>() {
         }.getType());
     }
 }
