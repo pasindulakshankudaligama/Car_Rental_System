@@ -21,4 +21,9 @@ public class RentController {
         rentService.saveRent(rentDTO);
         return new ResponseUtil(200,"Saved",null);
     }
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteRent(@RequestParam String id){
+        rentService.deleteRent(id);
+        return new ResponseUtil(200,"Deleted",null);
+    }
 }
