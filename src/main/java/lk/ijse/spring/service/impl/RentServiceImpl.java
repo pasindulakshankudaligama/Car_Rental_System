@@ -26,13 +26,17 @@ public class RentServiceImpl implements RentService {
         if (!rentRepo.existsById(dto.getId())) {
             rentRepo.save(mapper.map(dto, Rent.class));
         } else {
-            throw new RuntimeException("Customer Already Exist..!");
+            throw new RuntimeException("Rent Already Exist..!");
         }
     }
 
     @Override
     public void deleteRent(String id) {
-
+        if (rentRepo.existsById(id)) {
+            rentRepo.deleteById(id);
+        } else {
+            throw new RuntimeException("Please check the Rent Id.. No Rent..!");
+        }
     }
 
     @Override
