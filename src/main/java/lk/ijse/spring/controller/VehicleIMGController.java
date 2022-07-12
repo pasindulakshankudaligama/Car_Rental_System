@@ -18,7 +18,7 @@ public class VehicleIMGController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveVehicleIMG(@ModelAttribute Vehicle_IMGDTO vehicle_imgdto){
+    public ResponseUtil saveVehicleIMG(@RequestBody Vehicle_IMGDTO vehicle_imgdto){
         vehicleIMGService.saveVehicleIMG(vehicle_imgdto);
         return new ResponseUtil(200,"Saved",null);
     }

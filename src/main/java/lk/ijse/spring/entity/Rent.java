@@ -26,6 +26,9 @@ public class Rent {
     @JoinColumn(name = "id",referencedColumnName = "id",nullable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy = "rent",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "rent",cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private List<Rent_Detail> rent_details;
+
+    @OneToMany(mappedBy = "rent",cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    private List<Driver_Schedule> driver_schedules;
 }

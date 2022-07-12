@@ -24,6 +24,7 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public void saveVehicle(VehicleDTO dto) {
         if (!repo.existsById(dto.getRegistration_Number())) {
+
             repo.save(mapper.map(dto, Vehicle.class));
         } else {
             throw new RuntimeException("Vehicle Already Exist..!");
