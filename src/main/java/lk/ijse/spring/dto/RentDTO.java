@@ -16,7 +16,6 @@ import java.util.List;
 @ToString
 public class RentDTO {
     private String rent_Id;
-    private String id;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private String status;

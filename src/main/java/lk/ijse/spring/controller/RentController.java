@@ -17,7 +17,7 @@ public class RentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveRent(@ModelAttribute RentDTO rentDTO){
+    public ResponseUtil saveRent(@RequestBody RentDTO rentDTO){
         rentService.saveRent(rentDTO);
         return new ResponseUtil(200,"Saved",null);
     }
