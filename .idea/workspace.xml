@@ -75,6 +75,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/app" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="lk.ijse.spring.service.impl" />
     </key>
@@ -194,7 +197,7 @@
       <workItem from="1657722429662" duration="2324000" />
       <workItem from="1657735479528" duration="31000" />
       <workItem from="1657785834494" duration="662000" />
-      <workItem from="1658249725638" duration="3173000" />
+      <workItem from="1658249725638" duration="5382000" />
     </task>
     <servers />
   </component>
