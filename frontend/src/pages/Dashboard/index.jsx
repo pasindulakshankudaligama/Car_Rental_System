@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {styleSheet} from "./style";
 import {withStyles} from "@mui/styles";
-import AppBar from '../../components/common/appBar'
+//import AppBar from '../../components/common/appBar'
 import Hero from "../../components/Hero";
 
 
