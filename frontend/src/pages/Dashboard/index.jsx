@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {styleSheet} from "./style";
+import {styleSheet} from "./dashboard";
 import {withStyles} from "@mui/styles";
 //import AppBar from '../../components/common/appBar'
-import Hero from "../../components/Hero";
+import Hero from "../../components/Hero/Hero";
 
 
 class Dashboard extends Component {
