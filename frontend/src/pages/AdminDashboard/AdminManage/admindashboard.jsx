@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material'
 import React, { Component } from 'react'
-import Navbar from '../../../components/common/Navbar/Admin'
+import Navbar from '../../../components/common/NavBar/Admin'
 import Sidebar from '../../../components/common/Sidebar'
 import Widget from '../../../components/common/widgets'
 
