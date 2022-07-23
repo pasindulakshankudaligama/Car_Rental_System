@@ -21,7 +21,7 @@ class Footer extends Component {
                                     <Typography variant="h6">Headoffice</Typography>
                                 </Grid>
                                 <Grid>
-                                    <Typography variant="p">Nawalapitiya, kandy</Typography>
+                                    <Typography variant="p">Meegahakubura, Bulathsinhala</Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -69,7 +69,7 @@ class Footer extends Component {
                                     <Typography variant="h6"> Call Us</Typography>
                                 </Grid>
                                 <Grid>
-                                    <Typography variant="p">+94 767059199</Typography>
+                                    <Typography variant="p">+94 702616332</Typography>
                                 </Grid>
                             </Grid>
                         </Grid>

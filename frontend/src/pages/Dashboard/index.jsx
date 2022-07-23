@@ -5,6 +5,7 @@ import NavBar from "../../components/NavBar";
 import Hero from "../../components/Hero/Hero";
 import {Grid} from "@mui/material";
 import ListVehicle from "../../components/ListVehicle";
+import Footer from "../../components/Footer";
 
 
 class Dashboard extends Component {
@@ -20,6 +21,7 @@ class Dashboard extends Component {
                     <NavBar />
                     <Hero/>
                     <ListVehicle/>
+                    <Footer/>
                 </div>
             </Grid>
         )
