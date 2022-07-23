@@ -18,6 +18,7 @@ class Dashboard extends Component {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                     <NavBar />
                     <Hero/>
+                    <ListV
                 </div>
             </Grid>
         )
