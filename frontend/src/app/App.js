@@ -1,38 +1,16 @@
-
-//import AppBar from "../components/common/appBar";
+import { Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
+import NotFound from '../pages/session/NotFound'
 
-function App(){
-    return(
-        <div>
-            {/* <div className={'bg-red-500'}>
-               fffffffff
-            </div>*/}
-            {/* <AppBar />*/}
-            <Dashboard/>
-        </div>
-
-    );
-}
-
-
-/*
-import React from "react";
-import Login from "../pages/session/Login";
-import {Routes, Route} from "react-router-dom";
-import NotFound from "../pages/session/NotFound";
-import Dashboard from "../pages/Dashboard";
 
 function App() {
-
-  return (
-      <Routes>
-        <Route path='login' element={<Login/>}/>
-        <Route path="*" element={<NotFound/>}/>
-        <Route path="dashboard" element={<Dashboard/>}/>
-      </Routes>
-  );
+    return (
+        <Routes>
+            <Route exact path="/" element={<Dashboard />} />
+          {/*  <Route path="admin" element={< />} />*/}
+            <Route path="*" element={<NotFound />} />
+        </Routes>
+    );
 }
-*/
 
 export default App;
