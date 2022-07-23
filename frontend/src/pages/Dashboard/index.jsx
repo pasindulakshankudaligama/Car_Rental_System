@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {styleSheet} from "./dashboard";
 import {withStyles} from "@mui/styles";
-//import AppBar from '../../components/common/appBar'
+import NavBar from "../../components/NavBar";
 import Hero from "../../components/Hero/Hero";
+import {Grid} from "@mui/material";
 
 
 class Dashboard extends Component {
@@ -13,11 +14,12 @@ class Dashboard extends Component {
     render() {
         const {classes} = this.props
         return (
-            <div>
-                {/*<AppBar/>*/}
-                <Hero/>
-
-            </div>
+            <Grid container>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                    <NavBar />
+                    <Hero/>
+                </div>
+            </Grid>
         )
     }
 

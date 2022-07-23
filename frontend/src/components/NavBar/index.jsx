@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import {Dialog, DialogContent, DialogTitle } from "@mui/material";
 import CommonButton from "../common/Button";
-import LoginUser from "../../pages/session/Login/index";
+import LoginUser from "../../pages/session/Login/user/index";
 import CloseIcon from "@mui/icons-material/Close";
 import { withStyles } from "@mui/styles";
 import { styleSheet } from "./style";
