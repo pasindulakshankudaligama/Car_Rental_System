@@ -4,7 +4,7 @@ import Navbar from '../../../components/common/NavBar/Admin'
 import Sidebar from '../../../components/common/Sidebar'
 import Widget from '../../../components/common/widgets'
 
-class Dashboard extends Component {
+class AdminManageDashboard extends Component {
     render() {
         return (
             <Grid container direction={'row'} columns='12'>
@@ -29,4 +29,4 @@ class Dashboard extends Component {
         )
     }
 }
-export default Dashboard
+export default AdminManageDashboard

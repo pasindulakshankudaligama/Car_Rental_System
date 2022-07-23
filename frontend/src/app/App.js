@@ -1,33 +1,32 @@
-
 import Dashboard from "../pages/Dashboard";
+import LoginAdmin from "../pages/session/Login/admin";
+import AdminManageDashboard from "../pages/AdminDashboard/AdminManage/admindashboard";
+import {Route,Routes} from "react-router-dom";
+import LoginDriver from "../pages/session/Login/driver";
+import NotFound from "../pages/session/NotFound";
 
-function App(){
-    return(
-        <div>
-            <Dashboard/>
-        </div>
+function App() {
+    return (
+        <Routes>
+            <Route exact path="/" element={<Dashboard/>}/>
+            <Route path="dashboard" element={<AdminManageDashboard/>}/>
+
+            <Route path="admin">
+                <Route index element={<LoginAdmin/>}/>
+                <Route path="dashboard">
+                    <Route index element={<AdminManageDashboard/>}/>
+                </Route>
+            </Route>
+            <Route path="driver">
+                <Route index element={<LoginDriver/>}/>
+
+            </Route>
+
+            <Route path="*" element={<NotFound/>}/>
+        </Routes>
 
     );
 }
 
-
-/*
-import React from "react";
-import Login from "../pages/session/Login";
-import {Routes, Route} from "react-router-dom";
-import NotFound from "../pages/session/NotFound";
-import Dashboard from "../pages/Dashboard";
-
-function App() {
-
-  return (
-      <Routes>
-        <Route path='login' element={<Login/>}/>
-        <Route path="*" element={<NotFound/>}/>
-        <Route path="dashboard" element={<Dashboard/>}/>
-      </Routes>
-  );
-}
-*/
 
 export default App;
