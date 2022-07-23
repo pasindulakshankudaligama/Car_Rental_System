@@ -1,6 +1,7 @@
+/*
 export const styleSheet = {
 
-    /* container:{
+    /!* container:{
         display:'flex',
         // flexWrap:'wrap',
         alignItems:'center',
@@ -10,7 +11,7 @@ export const styleSheet = {
         height:'100vh',
         width:'100vw',
         // color:'white'
-    }, */
+    }, *!/
 
     login_cover: {
         backgroundColor: 'red',
@@ -75,4 +76,4 @@ export const styleSheet = {
         p: 4,
     }
 
-}
+}*/

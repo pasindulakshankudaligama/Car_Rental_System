@@ -49,13 +49,13 @@ class LoginUser extends Component {
                 direction={"column"}
                 alignItems="center"
                 justifyContent={"center"}
-                className="h-screen w-screen bg-red-200"
+               // className="h-screen w-screen bg-red-200"
             >
                 <Grid container direction={"column"} alignItems="center">
                     <Grid
                         item
                         container
-                        className="min-h-96  w-96 bg-slate-50 rounded-lg p-10 drop-shadow-lg"
+                        className="min-h-96  w-96 bg-slate-50 rounded-lg p-10 "
                     >
                         <Grid container item direction={"column"} gap="20px" className="">
                             {/* <Grid item>
