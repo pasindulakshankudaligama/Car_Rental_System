@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {styleSheet} from "./dashboard";
 import {withStyles} from "@mui/styles";
-import NavBar from "../../components/NavBar";
+import NavBar from "../../components/common/NavBar/User";
 import Hero from "../../components/Hero/Hero";
 import {Grid} from "@mui/material";
 import ListVehicle from "../../components/ListVehicle";
