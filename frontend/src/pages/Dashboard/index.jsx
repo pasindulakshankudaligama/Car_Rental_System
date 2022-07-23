@@ -4,6 +4,7 @@ import {withStyles} from "@mui/styles";
 import NavBar from "../../components/NavBar";
 import Hero from "../../components/Hero/Hero";
 import {Grid} from "@mui/material";
+import ListVehicle from "../../components/ListVehicle";
 
 
 class Dashboard extends Component {
@@ -18,7 +19,7 @@ class Dashboard extends Component {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                     <NavBar />
                     <Hero/>
-                    <ListV
+                    <ListVehicle/>
                 </div>
             </Grid>
         )
