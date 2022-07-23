@@ -14,7 +14,7 @@ class Dashboard extends Component {
         const {classes} = this.props
         return (
             <div>
-                <AppBar/>
+                {/*<AppBar/>*/}
                 <Hero/>
 
             </div>
