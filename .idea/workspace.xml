@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddVehicleRates/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddVehicleRates/index.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,7 +211,7 @@
       <workItem from="1658561800884" duration="7606000" />
       <workItem from="1658596416282" duration="11000000" />
       <workItem from="1658610248930" duration="5721000" />
-      <workItem from="1658647512605" duration="2881000" />
+      <workItem from="1658647512605" duration="3198000" />
     </task>
     <servers />
   </component>
