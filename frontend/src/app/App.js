@@ -6,6 +6,8 @@ import LoginDriver from "../pages/session/Login/driver";
 import NotFound from "../pages/session/NotFound";
 import VehicleManage from "../pages/AdminDashboard/Vehicle Manage";
 import AddNewVehicle from "../components/AddVehicle";
+import VehicleRates from "../pages/AdminDashboard/VehicleRates";
+import VehicleType from "../pages/AdminDashboard/VehicleTypes";
 
 function App() {
     return (
@@ -18,6 +20,8 @@ function App() {
                 <Route path="dashboard">
                     <Route index element={<AdminManageDashboard/>}/>
                     <Route path="vehiclemanage" element={<VehicleManage />} />
+                    <Route path="vehiclerates" element={<VehicleRates/>}/>
+                    <Route path="vehicletype" element={<VehicleType/>}/>
                     <Route path="test" element={<AddNewVehicle />} />
                 </Route>
             </Route>

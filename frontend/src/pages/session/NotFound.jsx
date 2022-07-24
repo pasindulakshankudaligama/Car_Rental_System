@@ -1,7 +1,7 @@
 import { withStyles } from '@mui/styles';
 import { Component } from 'react';
 import GDSEButton from '../../components/common/Button';
-//import not_found from '../../assets/img/not_found.jpeg';
+import not_found from '../../assets/img/404.png';
 import { Link } from 'react-router-dom';
 
 const styleSheet = () => ({
