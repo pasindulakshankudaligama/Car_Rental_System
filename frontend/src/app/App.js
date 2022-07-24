@@ -4,6 +4,8 @@ import AdminManageDashboard from "../pages/AdminDashboard/AdminManage/admindashb
 import {Route,Routes} from "react-router-dom";
 import LoginDriver from "../pages/session/Login/driver";
 import NotFound from "../pages/session/NotFound";
+import VehicleManage from "../pages/AdminDashboard/Vehicle Manage";
+import AddNewVehicle from "../components/AddVehicle";
 
 function App() {
     return (
@@ -15,11 +17,13 @@ function App() {
                 <Route index element={<LoginAdmin/>}/>
                 <Route path="dashboard">
                     <Route index element={<AdminManageDashboard/>}/>
+                    <Route path="vehiclemanage" element={<VehicleManage />} />
+                    <Route path="test" element={<AddNewVehicle />} />
                 </Route>
             </Route>
             <Route path="driver">
                 <Route index element={<LoginDriver/>}/>
-
+                <Route path="dashboard" element={<AdminManageDashboard/>}/>
             </Route>
 
             <Route path="*" element={<NotFound/>}/>

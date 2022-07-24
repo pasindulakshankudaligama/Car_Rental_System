@@ -16,7 +16,7 @@ class VehicleCard extends Component {
                 className="flex flex-col bg-stone-900 rounded-3xl order-blue-500 border hover:cursor-pointer hover:shadow-lg hover:shadow-yellow-500 hover:scale-105"
             >
                 <div
-                    className="rounded-t-3xl bg-hero-pattern bg-cover"
+                    className="rounded-t-3xl bg-carImg2 bg-cover"
                     style={{ height: "204px" }}
                 ></div>
                 <div className="text-white flex flex-col justify-between">
