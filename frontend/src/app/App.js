@@ -8,6 +8,7 @@ import VehicleManage from "../pages/AdminDashboard/Vehicle Manage";
 import AddNewVehicle from "../components/AddVehicle";
 import VehicleRates from "../pages/AdminDashboard/VehicleRates";
 import VehicleType from "../pages/AdminDashboard/VehicleTypes";
+import DriverManage from "../pages/AdminDashboard/DriverManage";
 
 function App() {
     return (

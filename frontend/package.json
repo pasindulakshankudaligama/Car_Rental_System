@@ -46,6 +46,7 @@
   "devDependencies": {
     "@mui/material": "^5.9.1",
     "autoprefixer": "^10.4.7",
+    "axios": "^0.27.2",
     "postcss": "^8.4.14",
     "prop-types": "^15.8.1",
     "react-material-ui-form-validator": "^3.0.1",

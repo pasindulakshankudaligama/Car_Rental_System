@@ -5,3 +5,4 @@ const instance = axios.create({
         baseURL:"http://localhost:8080/Car_Rent_System_Back_End__war/"
     }
 )
+export default instance;
