@@ -1,6 +1,6 @@
 import {Grid} from "@mui/material";
 import React, {Component} from "react";
-import {styleSheet} from "./styles";
+import {styleSheet} from "./style";
 import {withStyles} from "@mui/styles";
 import {TextValidator, ValidatorForm} from "react-material-ui-form-validator";
 import CommonButton from "../common/Button";
