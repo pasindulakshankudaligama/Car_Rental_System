@@ -22,6 +22,7 @@ function App() {
                     <Route path="vehiclemanage" element={<VehicleManage />} />
                     <Route path="vehiclerates" element={<VehicleRates/>}/>
                     <Route path="vehicletype" element={<VehicleType/>}/>
+                    <Route path="drivermanage" element={<DriverManage/>}/>
                     <Route path="test" element={<AddNewVehicle />} />
                 </Route>
             </Route>

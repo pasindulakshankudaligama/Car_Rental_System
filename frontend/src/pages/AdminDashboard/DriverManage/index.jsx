@@ -6,7 +6,7 @@ import CommonButton from "../../../components/common/Button";
 import CommonDataTable from "../../../components/common/Table";
 import AddIcon from "@mui/icons-material/Add";
 import {withStyles} from "@mui/styles";
-import {styleSheet} from "./styles";
+import {styleSheet} from "./style";
 import CloseIcon from "@mui/icons-material/Close";
 import AddDriver from "../../../components/AddDriver";
 import DriverService from "../../../services/DriverService";
