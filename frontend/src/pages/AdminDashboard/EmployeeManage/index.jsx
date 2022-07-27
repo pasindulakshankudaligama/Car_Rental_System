@@ -8,13 +8,11 @@ import AddIcon from "@mui/icons-material/Add";
 import {withStyles} from "@mui/styles";
 import {styleSheet} from "./style";
 import CloseIcon from "@mui/icons-material/Close";
-import AddDriver from "../../../components/AddDriver";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EmployeeService from "../../../services/StaffService";
+import StaffService from "../../../services/StaffService";
 import CustomSnackBar from "../../../components/common/SnackBar";
 import AddEmployee from "../../../components/AddEmployee";
-import StaffService from "../../../services/StaffService";
 
 class EmployeeManage extends Component {
     constructor(props) {
@@ -81,7 +79,6 @@ class EmployeeManage extends Component {
                 },
 
 
-
                 {
                     field: "action",
                     headerName: "Action",
@@ -113,7 +110,7 @@ class EmployeeManage extends Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log("did")
-        if (prevState.popup == true){
+        if (prevState.popup == true) {
             console.log("did t")
             this.loadData()
         }
@@ -121,7 +118,7 @@ class EmployeeManage extends Component {
 
     updateStaff = async (data) => {
         const row = data;
-        let updateEmployee={
+        let updateStaff = {
             staff_Id: row.staff_Id,
             name: row.name,
             address: row.address,
@@ -131,10 +128,10 @@ class EmployeeManage extends Component {
             password: row.password,
 
         }
-        await this.setState({updateEmployee:updateEmployee});
+        await this.setState({updateStaff: updateStaff});
         await this.setState({
-            popup:true,
-            isUpdate:true
+            popup: true,
+            isUpdate: true
         })
     }
     deleteStaff = async (id) => {
@@ -201,7 +198,7 @@ class EmployeeManage extends Component {
                                 <CommonButton
                                     variant="outlined"
                                     label="Add Employee"
-                                    onClick={() => this.setState({popup: true,isUpdate:false})}
+                                    onClick={() => this.setState({popup: true, isUpdate: false})}
                                     startIcon={<AddIcon/>}
                                 />
                             </Grid>
@@ -246,7 +243,7 @@ class EmployeeManage extends Component {
                         </div>
                     </DialogTitle>
                     <DialogContent dividers>
-                        <AddEmployee isUpdate={this.state.isUpdate} obj={this.state.updateEmployee}/>
+                        <AddEmployee isUpdate={this.state.isUpdate} obj={this.state.updateStaff}/>
                     </DialogContent>
                 </Dialog>
                 <CustomSnackBar
