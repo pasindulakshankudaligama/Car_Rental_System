@@ -9,6 +9,8 @@ import {withStyles} from "@mui/styles";
 import {styleSheet} from "./style";
 import CloseIcon from "@mui/icons-material/Close";
 import AddVehicleType from "../../../components/AddVehicleType";
+import DriverService from "../../../services/DriverService";
+import VehicleTypeSevice from "../../../services/VehicleTypeSevice";
 
 class VehicleType extends Component {
     constructor(props) {
@@ -52,17 +54,33 @@ class VehicleType extends Component {
             ],
         };
     }
-
-    async loadData() {
-        // let resp = await PostService.fetchPosts();
-        const data = [];
-        this.setState({
-            loaded: true,
-            data: data,
-        });
-        console.log(this.state.data);
-        // console.log(JSON.stringify(resp.data));
+    updateVehicleType=(data)=>{
+        const rows =data;
+        console.log(rows)
     }
+    async loadData() {
+        let resp = await VehicleTypeSevice.fetchVehicleType();
+        let nData = [];
+        if (resp.status === 200) {
+            resp.data.data.map((value, index) => {
+                value.id = value.vehicle_Type_Id;
+                nData.push(value)
+            })
+
+            this.setState({
+                loaded: true,
+                data: nData,
+            });
+        }
+        console.log(this.state.data);
+        // console.log(this.state.data);
+        /*this.state.data.map((value, index)=>{
+            console.log(index)
+            console.log(value)
+        })*/
+
+    }
+
 
     componentDidMount() {
         this.loadData();
@@ -132,7 +150,7 @@ class VehicleType extends Component {
                             </IconButton>
                         </div>
                     </DialogTitle>
-                    <DialogContent dividers>
+                    <DialogContent dividers={this.state.updateVehicleType[0]}>
                         <AddVehicleType/>
                     </DialogContent>
                 </Dialog>
