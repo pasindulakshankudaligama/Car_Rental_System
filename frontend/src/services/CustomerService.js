@@ -25,6 +25,17 @@ class CustomerService {
         });
         return await promise;
     }
+    deleteCustomers = async (params) => {
+        const promise = new Promise((resolve, reject) => {
+            axios.delete('customer',{params:params})
+                .then((res) => {
+                    return resolve(res)
+                }).catch((err) => {
+                return resolve(err)
+            })
+        })
+        return await promise;
+    }
 }
 
 export default new CustomerService();
