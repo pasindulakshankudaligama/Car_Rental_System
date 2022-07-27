@@ -1,4 +1,4 @@
-import {Dialog, DialogContent, DialogTitle, Grid, IconButton, Typography,} from "@mui/material";
+import {Dialog, DialogContent, DialogTitle, Grid, IconButton, Tooltip, Typography,} from "@mui/material";
 import React, {Component} from "react";
 import Navbar from "../../../components/common/NavBar/Admin";
 import Sidebar from "../../../components/common/Sidebar";
@@ -9,6 +9,12 @@ import {withStyles} from "@mui/styles";
 import {styleSheet} from "./style";
 import CloseIcon from "@mui/icons-material/Close";
 import AddDriver from "../../../components/AddDriver";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EmployeeService from "../../../services/StaffService";
+import CustomSnackBar from "../../../components/common/SnackBar";
+import AddEmployee from "../../../components/AddEmployee";
+import StaffService from "../../../services/StaffService";
 
 class EmployeeManage extends Component {
     constructor(props) {
@@ -19,6 +25,9 @@ class EmployeeManage extends Component {
             message: "",
             severity: "",
 
+            updateEmployee: {},
+            isUpdate: false,
+
             //  for table
             data: [],
             loaded: false,
@@ -26,7 +35,7 @@ class EmployeeManage extends Component {
             //  for data table
             columns: [
                 {
-                    field: "staffId",
+                    field: "staff_Id",
                     headerName: "Employee ID",
                     width: 200,
                 },
@@ -43,10 +52,16 @@ class EmployeeManage extends Component {
                     width: 200,
                     sortable: false,
                 },
+                {
+                    field: "type",
+                    headerName: "Type",
+                    width: 200,
+                    sortable: false,
+                },
 
                 {
-                    field: "mobileNo",
-                    headerName: "Mobile No.",
+                    field: "mobile_Number",
+                    headerName: "mobile_Number",
                     width: 200,
                     sortable: false,
                 },
@@ -65,31 +80,99 @@ class EmployeeManage extends Component {
                     sortable: false,
                 },
 
-                {
-                    field: "type",
-                    headerName: "Type",
-                    width: 200,
-                    sortable: false,
-                },
+
 
                 {
-                    field: "Action",
+                    field: "action",
                     headerName: "Action",
                     width: 200,
+                    renderCell: (params) => {
+                        return (
+                            <>
+                                <Tooltip title="Edit">
+                                    <IconButton onClick={async () => {
+                                        await this.updateStaff(params.row);
+                                    }}>
+                                        <EditIcon className={'text-blue-500'}/>
+                                    </IconButton>
+                                </Tooltip>
+                                <Tooltip title="Delete">
+                                    <IconButton onClick={async () => {
+                                        await this.deleteStaff(params.row.staffId);
+                                    }}>
+                                        <DeleteIcon className={'text-red-500'}/>
+                                    </IconButton>
+                                </Tooltip>
+                            </>
+                        )
+                    }
                 },
             ],
         };
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("did")
+        if (prevState.popup == true){
+            console.log("did t")
+            this.loadData()
+        }
+    }
+
+    updateStaff = async (data) => {
+        const row = data;
+        let updateEmployee={
+            staff_Id: row.staff_Id,
+            name: row.name,
+            address: row.address,
+            type: row.type,
+            mobile_Number: row.mobile_Number,
+            email: row.email,
+            password: row.password,
+
+        }
+        await this.setState({updateEmployee:updateEmployee});
+        await this.setState({
+            popup:true,
+            isUpdate:true
+        })
+    }
+    deleteStaff = async (id) => {
+        let params = {
+            staff_Id: id
+        }
+        let res = await StaffService.deleteStaff(params);
+        console.log(res)
+        if (res.status === 200) {
+            this.setState({
+                alert: true,
+                message: res.data.message,
+                severity: 'success'
+            });
+            await this.loadData();
+        } else {
+            this.setState({
+                alert: true,
+                message: res.message,
+                severity: 'error'
+            });
+        }
+    }
+
     async loadData() {
-        // let resp = await PostService.fetchPosts();
-        const data = [];
-        this.setState({
-            loaded: true,
-            data: data,
-        });
-        console.log(this.state.data);
-        // console.log(JSON.stringify(resp.data));
+        let resp = await StaffService.fetchStaff();
+        let nData = [];
+        if (resp.status === 200) {
+            resp.data.data.map((value, index) => {
+                value.id = value.staff_Id;
+                nData.push(value)
+            })
+
+            this.setState({
+                loaded: true,
+                data: nData,
+            });
+        }
     }
 
     componentDidMount() {
@@ -100,42 +183,44 @@ class EmployeeManage extends Component {
     render() {
         const {classes} = this.props;
         return (
-            <Grid container direction={"row"} columns="12">
-                <Grid item xs={"auto"}>
-                    <Sidebar/>
-                </Grid>
-                <Grid item xs className="">
-                    <Navbar/>
-                    <Grid container item xs={"auto"} className="flex p-5 gap-5">
-                        <Grid
-                            container
-                            item
-                            xs={12}
-                            gap="5px"
-                            className="rounded-lg p-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
-                        >
-                            <CommonButton
-                                variant="outlined"
-                                label="Add Employee"
-                                onClick={() => this.setState({popup: true})}
-                                startIcon={<AddIcon/>}
-                            />
-                        </Grid>
-                        <Grid
-                            container
-                            item
-                            xs={12}
-                            gap="5px"
-                            className="rounded-lg p-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
-                            style={{height: "700px"}}
-                        >
-                            <CommonDataTable
-                                columns={this.state.columns}
-                                rows={this.state.data}
-                                rowsPerPageOptions={5}
-                                pageSize={10}
-                                // checkboxSelection={true}
-                            />
+            <>
+                <Grid container direction={"row"} columns="12">
+                    <Grid item xs={"auto"}>
+                        <Sidebar/>
+                    </Grid>
+                    <Grid item xs className="">
+                        <Navbar/>
+                        <Grid container item xs={"auto"} className="flex p-5 gap-5">
+                            <Grid
+                                container
+                                item
+                                xs={12}
+                                gap="5px"
+                                className="rounded-lg p-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                            >
+                                <CommonButton
+                                    variant="outlined"
+                                    label="Add Employee"
+                                    onClick={() => this.setState({popup: true,isUpdate:false})}
+                                    startIcon={<AddIcon/>}
+                                />
+                            </Grid>
+                            <Grid
+                                container
+                                item
+                                xs={12}
+                                gap="5px"
+                                className="rounded-lg p-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                                style={{height: "700px"}}
+                            >
+                                <CommonDataTable
+                                    columns={this.state.columns}
+                                    rows={this.state.data}
+                                    rowsPerPageOptions={5}
+                                    pageSize={10}
+                                    // checkboxSelection={true}
+                                />
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -152,7 +237,7 @@ class EmployeeManage extends Component {
                                 className="font-bold flex-grow"
                                 style={{flexGrow: 1}}
                             >
-                                Add New Employee
+                                {this.state.isUpdate ? 'Update' : 'Add'} Employee
                             </Typography>
 
                             <IconButton onClick={() => this.setState({popup: false})}>
@@ -161,11 +246,20 @@ class EmployeeManage extends Component {
                         </div>
                     </DialogTitle>
                     <DialogContent dividers>
-                        <AddDriver/>
+                        <AddEmployee isUpdate={this.state.isUpdate} obj={this.state.updateEmployee}/>
                     </DialogContent>
                 </Dialog>
-            </Grid>
-        );
+                <CustomSnackBar
+                    open={this.state.alert}
+                    onClose={() => {
+                        this.setState({alert: false})
+                    }}
+                    message={this.state.message}
+                    autoHideDuration={3000}
+                    severity={this.state.severity}
+                    variant={'filled'}
+                />
+            </>);
     }
 }
 
