@@ -150,7 +150,7 @@ class VehicleType extends Component {
                             </IconButton>
                         </div>
                     </DialogTitle>
-                    <DialogContent dividers={this.state.updateVehicleType[0]}>
+                    <DialogContent dividers>
                         <AddVehicleType/>
                     </DialogContent>
                 </Dialog>
