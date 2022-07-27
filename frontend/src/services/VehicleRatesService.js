@@ -25,12 +25,23 @@ class VehicleRatesService {
         });
         return await promise;
     }
-    deleteRates = async (params) => {
+    deleteVehicleRates = async (params) => {
         const promise = new Promise((resolve, reject) => {
             axios.delete('rates', {params:params})
                 .then((res) => {
                     return resolve(res)
                 }).catch((err) => {
+                return resolve(err)
+            })
+        });
+        return await promise;
+    }
+    updateVehicleRates = async (data) =>{
+        const promise = new Promise((resolve, reject) => {
+            axios.put('rates',data)
+                .then((res)=>{
+                    return resolve(res)
+                }).catch((err)=>{
                 return resolve(err)
             })
         });
