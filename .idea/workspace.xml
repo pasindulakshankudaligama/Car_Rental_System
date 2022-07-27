@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Car_Rent_System(Back_End):war" />
+      <artifact name="backend" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,7 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddVehicleType/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddVehicleType/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Car_Rent_System_Back_End__war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Car_Rent_System_Back_End__war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddDriver/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddDriver/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/CustomerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/CustomerService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/DriverService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/DriverService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/RentsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/RentsService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/StaffService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/StaffService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/VehicleRatesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/VehicleRatesService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/VehicleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/VehicleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/VehicleTypeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/VehicleTypeService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +90,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/assets/img" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -103,11 +114,12 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.77" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.77" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/backend/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Car_Rent_System(Back_End):war">
+        <artifact name="backend">
           <settings>
-            <option name="CONTEXT_PATH" value="/Car_Rent_System_Back_End__war" />
+            <option name="CONTEXT_PATH" value="/backend" />
           </settings>
         </artifact>
       </deployment>
@@ -185,7 +197,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Car_Rent_System(Back_End):war" />
+          <artifact name="backend" />
         </option>
       </method>
     </configuration>
@@ -228,7 +240,7 @@
       <workItem from="1658854150350" duration="3859000" />
       <workItem from="1658909016671" duration="7064000" />
       <workItem from="1658936471408" duration="10530000" />
-      <workItem from="1658950196819" duration="1261000" />
+      <workItem from="1658950196819" duration="4708000" />
     </task>
     <servers />
   </component>

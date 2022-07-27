@@ -149,7 +149,7 @@ class AddDriver extends Component {
                                 <TextValidator
                                     label="Driver ID"
                                     onChange={this.handleChange}
-                                    name="driverId"
+                                    name="driver_Id"
                                     value={this.state.formData.driver_Id}
                                     validators={["required"]}
                                     errorMessages={["This field is required"]}
@@ -179,7 +179,7 @@ class AddDriver extends Component {
                                 <TextValidator
                                     label="Type"
                                     onChange={this.handleChange}
-                                    name="status"
+                                    name="type"
                                     value={this.state.formData.type}
                                     validators={["required"]}
                                     errorMessages={["This field is required"]}
@@ -190,7 +190,7 @@ class AddDriver extends Component {
                                 <TextValidator
                                     label="Mobile Number"
                                     onChange={this.handleChange}
-                                    name="mobileNo"
+                                    name="mobile_Number"
                                     value={this.state.formData.mobile_Number}
                                     validators={["required"]}
                                     errorMessages={["This field is required"]}
