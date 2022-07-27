@@ -12,7 +12,7 @@ import AddDriver from "../../../components/AddDriver";
 import DriverService from "../../../services/DriverService";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-
+import CustomSnackBar from "../../../components/common/SnackBar";
 
 class DriverManage extends Component {
     constructor(props) {
@@ -23,11 +23,11 @@ class DriverManage extends Component {
             message: "",
             severity: "",
 
-            updateDriver:[],
+            updateDriver:{},
+            isUpdate:false,
 
             //  for table
             data: [],
-            datas: [],
             loaded: false,
 
             //  for data table
@@ -87,14 +87,16 @@ class DriverManage extends Component {
                         return (
                             <>
                                 <Tooltip title="Edit">
-                                    <IconButton onClick={() => {
-                                        this.updateDriver(params.row);
+                                    <IconButton onClick={async () => {
+                                        await this.updateDriver(params.row);
                                     }}>
                                         <EditIcon className={'text-blue-500'}/>
                                     </IconButton>
                                 </Tooltip>
                                 <Tooltip title="Delete">
-                                    <IconButton>
+                                    <IconButton onClick={async () => {
+                                        await this.deleteDriver(params.row.driver_Id);
+                                    }}>
                                         <DeleteIcon className={'text-red-500'}/>
                                     </IconButton>
                                 </Tooltip>
@@ -105,24 +107,61 @@ class DriverManage extends Component {
             ],
         };
     }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevState.popup == true){
+            this.loadData()
+        }
+    }
 
-    updateDriver = (data) => {
-        const rows = data;
-        /*let updateDrivers = {
-            driverId: row.driverId,
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevState.popup == true){
+            this.loadData()
+        }
+    }
+
+    deleteDriver = async (id) => {
+        let params = {
+            driver_Id: id
+        }
+        console.warn("hellow")
+        let res = await DriverService.deleteDriver(params);
+        console.log(res)
+        if (res.status === 200) {
+            this.setState({
+                alert: true,
+                message: res.data.message,
+                severity: 'success'
+            });
+            await this.loadData();
+        } else {
+            this.setState({
+                alert: true,
+                message: res.message,
+                severity: 'error'
+            });
+        }
+    }
+    updateDriver = async (data) => {
+        const row = data;
+        let updateDrivers = {
+            driver_Id: row.driver_Id,
             name: row.name,
             address: row.address,
-            mobileNo: row.mobileNo,
+            type: row.type,
+            mobile_Number: row.mobile_Number,
             email: row.email,
-            password: row.password,
-            status: row.state
-        }*/
+            password: row.password
+
+        }
 
         /*let {updateDriver} = this.state;
-        updateDriver.push(updateDrivers);
-        this.setState({updateDriver: updateDrivers});*/
-        console.log(rows)
-
+        updateDriver.push(updateDrivers);*/
+        await this.setState({updateDriver: updateDrivers});
+        await this.setState({
+            popup: true,
+            isUpdate: true
+        })
+        console.log(this.state.updateDriver)
     }
 
     async loadData() {
@@ -130,7 +169,7 @@ class DriverManage extends Component {
         let nData = [];
         if (resp.status === 200) {
             resp.data.data.map((value, index) => {
-                value.id = value.driverId;
+                value.id = value.driver_Id;
                 nData.push(value)
             })
 
@@ -140,11 +179,6 @@ class DriverManage extends Component {
             });
         }
         console.log(this.state.data);
-        // console.log(this.state.data);
-        /*this.state.data.map((value, index)=>{
-            console.log(index)
-            console.log(value)
-        })*/
 
     }
 
@@ -152,8 +186,9 @@ class DriverManage extends Component {
         this.loadData();
 
         console.log("Mounted");
-
-
+    }
+    popupCloseBtn = () => {
+        this.setState({popup: false})
     }
 
     render() {
@@ -199,6 +234,16 @@ class DriverManage extends Component {
                         </Grid>
                     </Grid>
                 </Grid>
+                <CustomSnackBar
+                    open={this.state.alert}
+                    onClose={() => {
+                        this.setState({alert: false})
+                    }}
+                    message={this.state.message}
+                    autoHideDuration={3000}
+                    severity={this.state.severity}
+                    variant={'filled'}
+                />
                 <Dialog
                     open={this.state.popup}
                     maxWidth="md"
@@ -212,16 +257,16 @@ class DriverManage extends Component {
                                 className="font-bold flex-grow"
                                 style={{flexGrow: 1}}
                             >
-                                Add New Driver
+                                {this.state.isUpdate ? 'Update' : 'Add'} Driver
                             </Typography>
 
-                            <IconButton onClick={() => this.setState({popup: false})}>
+                            <IconButton  onClick={this.popupCloseBtn}>
                                 <CloseIcon/>
                             </IconButton>
                         </div>
                     </DialogTitle>
-                    <DialogContent driverObj={this.state.updateDriver[0]}>
-                        <AddDriver />
+                    <DialogContent>
+                        <AddDriver isUpdate={this.state.isUpdate} obj={this.state.updateDriver}/>
                     </DialogContent>
                 </Dialog>
             </Grid>
