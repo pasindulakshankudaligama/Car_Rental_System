@@ -14,7 +14,7 @@ class AddVehicleType extends Component {
             formData: {
                 vehicle_Type_Id: props.isUpdate?props.typeObj.vehicle_Type_Id:'',
                 type: props.isUpdate?props.typeObj.type:'',
-                ldw:props.isUpdate?props.typeObj.ldw:'',
+                loss_Damage_Waiver:props.isUpdate?props.typeObj.loss_Damage_Waiver:'',
             },
             alert: false,
             message: '',
@@ -64,7 +64,7 @@ class AddVehicleType extends Component {
     handleChange = (event) => {
         let id = event.target.name;
         switch (id) {
-            case "vehicleTypeId":
+            case "vehicle_Type_Id":
                 const vehicle_Type_Id = event.target.value;
                 this.setState(Object.assign(this.state.formData, {vehicle_Type_Id: vehicle_Type_Id}));
                 // this.setState({ userId });
@@ -75,9 +75,9 @@ class AddVehicleType extends Component {
                 this.setState(Object.assign(this.state.formData, {type: type}));
                 break;
 
-            case "ldw":
-                const ldw = event.target.value;
-                this.setState(Object.assign(this.state.formData, {ldw: ldw}));
+            case "loss_Damage_Waiver":
+                const loss_Damage_Waiver = event.target.value;
+                this.setState(Object.assign(this.state.formData, {loss_Damage_Waiver: loss_Damage_Waiver}));
                 break;
 
             default:
@@ -123,8 +123,8 @@ class AddVehicleType extends Component {
                                 <TextValidator
                                     label="L.D.W"
                                     onChange={this.handleChange}
-                                    name="ldw"
-                                    value={this.state.formData.ldw}
+                                    name="loss_Damage_Waiver"
+                                    value={this.state.formData.loss_Damage_Waiver}
                                     validators={["required","isFloat"]}
                                     errorMessages={["This field is required",'input is not valid']}
                                     className="w-full"

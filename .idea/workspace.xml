@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddVehicleRates/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddVehicleRates/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Car_Rent_System(Back_End)-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Car_Rent_System(Back_End)-1.0.0.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddVehicleType/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddVehicleType/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +228,7 @@
       <workItem from="1658854150350" duration="3859000" />
       <workItem from="1658909016671" duration="7064000" />
       <workItem from="1658936471408" duration="10530000" />
-      <workItem from="1658950196819" duration="849000" />
+      <workItem from="1658950196819" duration="1261000" />
     </task>
     <servers />
   </component>
