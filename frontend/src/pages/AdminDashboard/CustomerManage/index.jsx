@@ -1,14 +1,15 @@
-import {Dialog, DialogContent, DialogTitle, Grid, IconButton, Typography,} from "@mui/material";
+import {Dialog, DialogContent, DialogTitle, Grid, IconButton, Tooltip, Typography,} from "@mui/material";
 import React, {Component} from "react";
 import Navbar from "../../../components/common/NavBar/Admin";
 import Sidebar from "../../../components/common/Sidebar";
-import CommonButton from "../../../components/common/Button";
 import CommonDataTable from "../../../components/common/Table";
-import AddIcon from "@mui/icons-material/Add";
 import {withStyles} from "@mui/styles";
 import {styleSheet} from "./style";
 import CloseIcon from "@mui/icons-material/Close";
 import AddDriver from "../../../components/AddDriver";
+import DeleteIcon from "@mui/icons-material/Delete";
+import CustomerService from "../../../services/CustomerService";
+import CustomSnackBar from "../../../components/common/SnackBar";
 
 class CustomerManage extends Component {
     constructor(props) {
@@ -19,6 +20,8 @@ class CustomerManage extends Component {
             message: "",
             severity: "",
 
+            updateCustomer: {},
+            isUpdate: false,
             //  for table
             data: [],
             loaded: false,
@@ -26,7 +29,7 @@ class CustomerManage extends Component {
             //  for data table
             columns: [
                 {
-                    field: "regUserId",
+                    field: "id",
                     headerName: "Customer ID",
                     width: 175,
                 },
@@ -83,24 +86,65 @@ class CustomerManage extends Component {
                     field: "Action",
                     headerName: "Action",
                     width: 175,
+                    renderCell: (params) => {
+                        return (
+                            <>
+                                <Tooltip title="Delete">
+                                    <IconButton onClick={async () => {
+                                        await this.deleteCustomers(params.row.id);
+                                    }}>
+                                        <DeleteIcon className={'text-red-500'}/>
+                                    </IconButton>
+                                </Tooltip>
+                            </>
+                        )
+                    }
                 },
             ],
         };
     }
 
-    async loadData() {
-        // let resp = await PostService.fetchPosts();
-        const data = [];
-        this.setState({
-            loaded: true,
-            data: data,
-        });
-        console.log(this.state.data);
-        // console.log(JSON.stringify(resp.data));
+    deleteCustomer = async (id) => {
+
+        let params = {
+            id: id,
+        }
+        let res = await CustomerService.deleteCustomers(params)
+        console.log(res)
+        if (res.status === 200) {
+            this.setState({
+                alert: true,
+                message: res.data.message,
+                severity: 'success'
+            });
+            await this.loadCustomerData();
+        } else {
+            this.setState({
+                alert: true,
+                message: res.message,
+                severity: 'error'
+            });
+        }
+    }
+
+    async loadCustomerData() {
+        let resp = await CustomerService.fetchCustomer();
+        let nData = [];
+        if (resp.status === 200) {
+            resp.data.data.map((value, index) => {
+                value.id = value.id;
+                nData.push(value)
+            })
+
+            this.setState({
+                loaded: true,
+                data: nData,
+            });
+        }
     }
 
     componentDidMount() {
-        this.loadData();
+        this.loadCustomerData();
         console.log("Mounted");
     }
 
@@ -157,6 +201,16 @@ class CustomerManage extends Component {
                         <AddDriver/>
                     </DialogContent>
                 </Dialog>
+                <CustomSnackBar
+                    open={this.state.alert}
+                    onClose={() => {
+                        this.setState({alert: false})
+                    }}
+                    message={this.state.message}
+                    autoHideDuration={3000}
+                    severity={this.state.severity}
+                    variant={'filled'}
+                />
             </Grid>
         );
     }
