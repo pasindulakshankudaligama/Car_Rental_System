@@ -36,6 +36,17 @@ class StaffService {
         });
         return await promise;
     }
+    updateStaff = async (data) => {
+        const promise = new Promise((resolve, reject) => {
+            axios.put('staff', data)
+                .then((res) => {
+                    return resolve(res)
+                }).catch((err) => {
+                return resolve(err)
+            })
+        });
+        return await promise;
+    }
 }
 
 export default new StaffService();
