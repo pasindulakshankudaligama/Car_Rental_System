@@ -1,5 +1,5 @@
-import { Grid, Typography } from "@mui/material";
-import React, { Component } from "react";
+import {Grid, Typography} from "@mui/material";
+import React, {Component} from "react";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import LoginIcon from "@mui/icons-material/Login";
@@ -9,74 +9,74 @@ import CarRentalIcon from "@mui/icons-material/CarRental";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import PeopleIcon from "@mui/icons-material/People";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import { Link, Outlet } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class Sidebar extends Component {
     render() {
-        return (
+        return (<Grid
+            container
+            direction={"column"}
+            className="border-r-2 border-neutral-300 min-h-screen"
+        >
             <Grid
+                item
                 container
-                direction={"column"}
-                className="border-r-2 border-neutral-300 min-h-screen"
+                className="h-12 p-4"
+                direction={"row"}
+                justifyContent="center"
+                alignItems={"center"}
+                alignContent="center"
             >
-                <Grid
-                    item
-                    container
-                    className="h-12 p-4"
-                    direction={"row"}
-                    justifyContent="center"
-                    alignItems={"center"}
-                    alignContent="center"
-                >
-                    <Typography className="text-xl font-bold text-blue-600 font-dosis">
-                        Esay Car Rental
+                <Typography className="text-xl font-bold text-blue-600 font-dosis">
+                    Esay Car Rental
+                </Typography>
+            </Grid>
+            <hr className="border border-neutral-300"/>
+            <Grid item className="pl-2">
+                <ul>
+                    <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
+                        Main
                     </Typography>
-                </Grid>
-                <hr className="border border-neutral-300" />
-                <Grid item className="pl-2">
-                    <ul>
-                        <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
-                            Main
-                        </Typography>
-                        <Link to={".."}>
-                            <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                                <DashboardIcon className="text-blue-700 text-lg" />
-                                <Typography
-                                    variant="h6"
-                                    component={"span"}
-                                    className="text-sm font-semibold text-gray-700"
-                                >
-                                    Dashboard
-                                </Typography>
-                            </li>
-                        </Link>
+                    <Link to={".."}>
                         <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                            <CarRentalIcon className="text-blue-700 text-lg" />
+                            <DashboardIcon className="text-blue-700 text-lg"/>
                             <Typography
                                 variant="h6"
                                 component={"span"}
                                 className="text-sm font-semibold text-gray-700"
                             >
-                                Rental Requests
+                                Dashboard
                             </Typography>
                         </li>
-                        <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
-                            Vehicle Manage
+                    </Link>
+                    <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
+                        <CarRentalIcon className="text-blue-700 text-lg"/>
+                        <Typography
+                            variant="h6"
+                            component={"span"}
+                            className="text-sm font-semibold text-gray-700"
+                        >
+                            Rental Requests
                         </Typography>
-                        <Link to={"../vehiclemanage"}>
-                            <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                                <DirectionsCarIcon className="text-blue-700 text-lg" />
-                                <Typography
-                                    variant="h6"
-                                    component={"span"}
-                                    className="text-sm font-semibold text-gray-700"
-                                >
-                                    Vehicle Manage
-                                </Typography>
-                            </li>
-                        </Link>
+                    </li>
+                    <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
+                        Vehicle Manage
+                    </Typography>
+                    <Link to={"../vehiclemanage"}>
                         <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                            <DirectionsCarIcon className="text-blue-700 text-lg" />
+                            <DirectionsCarIcon className="text-blue-700 text-lg"/>
+                            <Typography
+                                variant="h6"
+                                component={"span"}
+                                className="text-sm font-semibold text-gray-700"
+                            >
+                                Vehicle Manage
+                            </Typography>
+                        </li>
+                    </Link>
+                    <Link to={"../vehiclerates"}>
+                        <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
+                            <DirectionsCarIcon className="text-blue-700 text-lg"/>
                             <Typography
                                 variant="h6"
                                 component={"span"}
@@ -85,8 +85,10 @@ class Sidebar extends Component {
                                 Vehicle Reats
                             </Typography>
                         </li>
+                    </Link>
+                    <Link to={"../vehicletype"}>
                         <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                            <DirectionsCarIcon className="text-blue-700 text-lg" />
+                            <DirectionsCarIcon className="text-blue-700 text-lg"/>
                             <Typography
                                 variant="h6"
                                 component={"span"}
@@ -95,11 +97,13 @@ class Sidebar extends Component {
                                 Vehicle Types
                             </Typography>
                         </li>
-                        <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
-                            Manage
-                        </Typography>
+                    </Link>
+                    <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
+                        Manage
+                    </Typography>
+                    <Link to={"../drivermanage"}>
                         <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                            <PersonOutlineOutlinedIcon className="text-blue-700 text-lg" />
+                            <PersonOutlineOutlinedIcon className="text-blue-700 text-lg"/>
                             <Typography
                                 variant="h6"
                                 component={"span"}
@@ -108,8 +112,10 @@ class Sidebar extends Component {
                                 Driver Manage
                             </Typography>
                         </li>
+                    </Link>
+                    <Link to={"../employeemanage"}>
                         <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                            <SupervisorAccountIcon className="text-blue-700 text-lg" />
+                            <SupervisorAccountIcon className="text-blue-700 text-lg"/>
                             <Typography
                                 variant="h6"
                                 component={"span"}
@@ -118,8 +124,10 @@ class Sidebar extends Component {
                                 Employee Manage
                             </Typography>
                         </li>
+                    </Link>
+                    <Link to={"../customermanage"}>
                         <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                            <PeopleIcon className="text-blue-700 text-lg" />
+                            <PeopleIcon className="text-blue-700 text-lg"/>
                             <Typography
                                 variant="h6"
                                 component={"span"}
@@ -128,46 +136,47 @@ class Sidebar extends Component {
                                 Customers Manage
                             </Typography>
                         </li>
-                        <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
-                            Useful
+                    </Link>
+                    <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
+                        Useful
+                    </Typography>
+                    <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
+                        <CalculateIcon className="text-blue-700 text-lg"/>
+                        <Typography
+                            variant="h6"
+                            component={"span"}
+                            className="text-sm font-semibold text-gray-700"
+                        >
+                            Calculate Income
                         </Typography>
-                        <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                            <CalculateIcon className="text-blue-700 text-lg" />
-                            <Typography
-                                variant="h6"
-                                component={"span"}
-                                className="text-sm font-semibold text-gray-700"
-                            >
-                                Calculate Income
-                            </Typography>
-                        </li>
-                        <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                            <AssessmentIcon className="text-blue-700 text-lg" />
-                            <Typography
-                                variant="h6"
-                                component={"span"}
-                                className="text-sm font-semibold text-gray-700"
-                            >
-                                Daily Summry
-                            </Typography>
-                        </li>
-                        <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
-                            Profile
+                    </li>
+                    <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
+                        <AssessmentIcon className="text-blue-700 text-lg"/>
+                        <Typography
+                            variant="h6"
+                            component={"span"}
+                            className="text-sm font-semibold text-gray-700"
+                        >
+                            Daily Summry
                         </Typography>
-                        <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
-                            <LoginIcon className="text-blue-700 text-lg" />
-                            <Typography
-                                variant="h6"
-                                component={"span"}
-                                className="text-sm font-semibold text-gray-700"
-                            >
-                                Logout
-                            </Typography>
-                        </li>
-                    </ul>
-                </Grid>
+                    </li>
+                    <Typography variant="p" component={"p"} className="text-xs font-bold text-gray-600 mt-4 mb-1">
+                        Profile
+                    </Typography>
+                    <li className="flex items-center gap-2 p-2 mr-3 cursor-pointer hover:bg-yellow-200 m-1 rounded-lg">
+                        <LoginIcon className="text-blue-700 text-lg"/>
+                        <Typography
+                            variant="h6"
+                            component={"span"}
+                            className="text-sm font-semibold text-gray-700"
+                        >
+                            Logout
+                        </Typography>
+                    </li>
+                </ul>
             </Grid>
-        );
+        </Grid>);
     }
 }
+
 export default Sidebar;
