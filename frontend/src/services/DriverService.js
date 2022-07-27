@@ -47,6 +47,7 @@ class DriverService {
         });
         return await promise;
     }
+
 }
 
 export default new DriverService();

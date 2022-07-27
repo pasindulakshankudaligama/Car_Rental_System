@@ -25,6 +25,17 @@ class StaffService {
         });
         return await promise;
     }
+    deleteStaff = async (params) => {
+        const promise = new Promise((resolve, reject) => {
+            axios.delete('staff', {params:params})
+                .then((res) => {
+                    return resolve(res)
+                }).catch((err) => {
+                return resolve(err)
+            })
+        });
+        return await promise;
+    }
 }
 
 export default new StaffService();
