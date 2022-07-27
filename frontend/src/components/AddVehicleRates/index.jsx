@@ -67,7 +67,6 @@ class AddVehicleRates extends Component {
             case "rate_Id":
                 const rate_Id = event.target.value;
                 this.setState(Object.assign(this.state.formData, {rate_Id: rate_Id}));
-                // this.setState({ userId });
                 break;
 
             case "daily_Rate":
@@ -86,7 +85,7 @@ class AddVehicleRates extends Component {
                 this.setState(Object.assign(this.state.formData, {free_Km_Day: free_Km_Day}));
                 break;
 
-                case "free_Km_Month":
+            case "free_Km_Month":
                 const free_Km_Month = event.target.value;
                 this.setState(Object.assign(this.state.formData, {free_Km_Month: free_Km_Month}));
                 break;
@@ -118,7 +117,7 @@ class AddVehicleRates extends Component {
                                 <TextValidator
                                     label="Rate ID"
                                     onChange={this.handleChange}
-                                    name="rateId"
+                                    name="rate_Id"
                                     value={this.state.formData.rate_Id}
                                     validators={["required"]}
                                     errorMessages={["This field is required"]}
@@ -128,28 +127,8 @@ class AddVehicleRates extends Component {
                                 <TextValidator
                                     label="Daily Rate"
                                     onChange={this.handleChange}
-                                    name="dailyRate"
+                                    name="daily_Rate"
                                     value={this.state.formData.daily_Rate}
-                                    validators={["required", "isFloat"]}
-                                    errorMessages={["This field is required", 'input is not valid']}
-                                    className="w-full"
-                                    style={{minWidth: '100%'}}
-                                />
-                                <TextValidator
-                                    label="Free Km For a Day"
-                                    onChange={this.handleChange}
-                                    name="freeKmForaDay"
-                                    value={this.state.formData.free_Km_Day}
-                                    validators={["required", "isFloat"]}
-                                    errorMessages={["This field is required", 'input is not valid']}
-                                    className="w-full"
-                                    style={{minWidth: '100%'}}
-                                />
-                                <TextValidator
-                                    label="Free Km For a Month"
-                                    onChange={this.handleChange}
-                                    name="freeKmForaMonth"
-                                    value={this.state.formData.free_Km_Month}
                                     validators={["required", "isFloat"]}
                                     errorMessages={["This field is required", 'input is not valid']}
                                     className="w-full"
@@ -158,18 +137,41 @@ class AddVehicleRates extends Component {
                                 <TextValidator
                                     label="Monthly Rate"
                                     onChange={this.handleChange}
-                                    name="monthlyRate"
-                                    value={this.state.formData.extra_Km_Price}
+                                    name="monthly_rate"
+                                    value={this.state.formData.monthly_rate}
                                     validators={["required", "isFloat"]}
                                     errorMessages={["This field is required", 'input is not valid']}
                                     className="w-full"
                                     style={{minWidth: '100%'}}
                                 />
                                 <TextValidator
+                                    label="Free Km For a Day"
+                                    onChange={this.handleChange}
+                                    name="free_Km_Day"
+                                    value={this.state.formData.free_Km_Day}
+                                    validators={["required", "isFloat"]}
+                                    errorMessages={["This field is required", 'input is not valid']}
+                                    className="w-full"
+                                    style={{minWidth: '100%'}}
+                                />
+
+                                <TextValidator
+                                    label="Free Km For a Month"
+                                    onChange={this.handleChange}
+                                    name="free_Km_Month"
+                                    value={this.state.formData.free_Km_Month}
+                                    validators={["required", "isFloat"]}
+                                    errorMessages={["This field is required", 'input is not valid']}
+                                    className="w-full"
+                                    style={{minWidth: '100%'}}
+                                />
+
+
+                                <TextValidator
                                     label="Price Per Extra Km"
                                     onChange={this.handleChange}
-                                    name="pricePerExtraKm"
-                                    value={this.state.formData.pricePerExtraKm}
+                                    name="extra_Km_Price"
+                                    value={this.state.formData.extra_Km_Price}
                                     validators={["required", "isFloat"]}
                                     errorMessages={["This field is required", 'input is not valid']}
                                     className="w-full"
