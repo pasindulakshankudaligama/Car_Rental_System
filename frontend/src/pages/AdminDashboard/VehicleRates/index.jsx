@@ -33,39 +33,39 @@ class VehicleRates extends Component {
             //  for data table
             columns: [
                 {
-                    field: "rateId",
+                    field: "rate_Id",
                     headerName: "Rate ID",
                     width: 228,
                 },
 
                 {
-                    field: "dailyRate",
+                    field: "daily_Rate",
                     headerName: "Daily Rate",
                     width: 228,
                 },
 
                 {
-                    field: "freeKmForaDay",
+                    field: "free_Km_Day",
                     headerName: "Free Km For a Day",
                     width: 228,
                     sortable: false,
                 },
 
                 {
-                    field: "freeKmForaMonth",
+                    field: "free_Km_Month",
                     headerName: "Free Km For a Month",
                     width: 228,
                 },
 
                 {
-                    field: "monthlyRate",
+                    field: "monthly_rate",
                     headerName: "Monthly Rate",
                     width: 228,
                     sortable: false,
                 },
 
                 {
-                    field: "pricePerExtraKm",
+                    field: "extra_Km_Price",
                     headerName: "Price Per Extra Km",
                     width: 228,
                     sortable: false,

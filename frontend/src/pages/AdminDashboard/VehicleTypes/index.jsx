@@ -34,7 +34,7 @@ class VehicleType extends Component {
             //  for data table
             columns: [
                 {
-                    field: "vehicleTypeId",
+                    field: "vehicle_Type_Id",
                     headerName: "Vehicle Type ID",
                     width: 400,
                 },
@@ -46,7 +46,7 @@ class VehicleType extends Component {
                 },
 
                 {
-                    field: "ldw",
+                    field: "loss_Damage_Waiver",
                     headerName: "L.D.W.",
                     width: 400,
                     sortable: false,
@@ -68,7 +68,7 @@ class VehicleType extends Component {
                                 </Tooltip>
                                 <Tooltip title="Delete">
                                     <IconButton onClick={async () => {
-                                        await this.deleteVehicleType(params.row.vehicleTypeId);
+                                        await this.deleteVehicleType(params.row.vehicle_Type_Id);
                                     }}>
                                         <DeleteIcon className={'text-red-500'}/>
                                     </IconButton>
@@ -111,9 +111,9 @@ class VehicleType extends Component {
     updateVehicleType = async (data) => {
         const row = data;
         let updateVehicleType = {
-            "vehicleTypeId": row.vehicleTypeId,
+            "vehicle_Type_Id": row.vehicle_Type_Id,
             "type": row.type,
-            "ldw": row.ldw,
+            "loss_Damage_Waiver": row.loss_Damage_Waiver,
         }
         await this.setState({updateVehicleType: updateVehicleType})
         await this.setState({
@@ -128,7 +128,7 @@ class VehicleType extends Component {
         let nData = [];
         if (resp.status === 200) {
             resp.data.data.map((value, index) => {
-                value.id = value.vehicleTypeId;
+                value.id = value.vehicle_Type_Id;
                 nData.push(value)
             })
 

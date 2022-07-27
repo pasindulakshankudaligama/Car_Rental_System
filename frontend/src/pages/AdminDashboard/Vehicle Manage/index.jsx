@@ -26,7 +26,7 @@ class VehicleManage extends Component {
             //  for data table
             columns: [
                 {
-                    field: "registrationNumber",
+                    field: "registration_Number",
                     headerName: "Reg Num",
                     width: 150,
                 },
@@ -38,32 +38,32 @@ class VehicleManage extends Component {
                 },
 
                 {
-                    field: "color",
+                    field: "colour",
                     headerName: "color",
                     width: 125,
                     sortable: false,
                 },
 
                 {
-                    field: "fuelType",
+                    field: "fuel_Type",
                     headerName: "Fule Type",
                     width: 150,
                 },
 
                 {
-                    field: "noOfPassengers",
+                    field: "no_Of_Passengers",
                     headerName: "Num. Passengers",
                     width: 150,
                 },
 
                 {
-                    field: "runningKm",
+                    field: "running_Km",
                     headerName: "Running km",
                     width: 150,
                 },
 
                 {
-                    field: "transmissionType",
+                    field: "transmission_Type",
                     headerName: "Transmission Type",
                     width: 150,
                 },
@@ -75,7 +75,7 @@ class VehicleManage extends Component {
                 },
 
                 {
-                    field: "type",
+                    field: "vehicleType",
                     headerName: "Type",
                     width: 150,
                 },

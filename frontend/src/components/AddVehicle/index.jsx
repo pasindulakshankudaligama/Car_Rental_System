@@ -133,11 +133,11 @@ class AddNewVehicle extends Component {
                         <FormControl variant="outlined" className={classes.select}>
                             <InputLabel>Fuel Type</InputLabel>
                             <Select
-                                labelId="fuel"
+                                labelId="fuel_Type"
                                 id="fuel_Type"
                                 value={this.state.formData.fuel_Type}
                                 // onChange={handleChange}
-                                label="fuel"
+                                label="fuel_Type"
                             >
                                 <MenuItem value="">
                                     <em>None</em>
@@ -167,8 +167,8 @@ class AddNewVehicle extends Component {
                             <InputLabel>Rates </InputLabel>
                             <Select
                                 labelId="rates"
-                                id="rate_Id"
-                                value={this.state.formData.rates.rate_Id}
+                                id="rates"
+                                value={this.state.formData.rates}
                                 // onChange={handleChange}
                                 label="rates"
                             >
@@ -184,8 +184,8 @@ class AddNewVehicle extends Component {
                             <InputLabel>Vehicle Type </InputLabel>
                             <Select
                                 labelId="vehicleType"
-                                id="vehicle_Type_Id"
-                                value={this.state.formData.type.vehicle_Type_Id}
+                                id="vehicleType"
+                                value={this.state.formData.vehicleType}
                                 // onChange={handleChange}
                                 label="vehicleType"
                             >
