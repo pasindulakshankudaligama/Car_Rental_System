@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/AdminManage/admindashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/AdminManage/admindashboard.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,7 +229,7 @@
       <workItem from="1658936471408" duration="10530000" />
       <workItem from="1658950196819" duration="6738000" />
       <workItem from="1658958593483" duration="3038000" />
-      <workItem from="1658994092494" duration="6639000" />
+      <workItem from="1658994092494" duration="7342000" />
     </task>
     <servers />
   </component>
