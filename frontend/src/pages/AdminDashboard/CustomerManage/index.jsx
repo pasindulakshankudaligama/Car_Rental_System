@@ -48,22 +48,21 @@ class CustomerManage extends Component {
                 },
 
                 {
-                    field: "mobileNo",
+                    field: "mobile_Number",
                     headerName: "Mobile No.",
                     width: 175,
                     sortable: false,
                 },
-
                 {
-                    field: "nicNo",
-                    headerName: "NIC",
+                    field: "driving_License_Number",
+                    headerName: "Driving License No",
                     width: 175,
                     sortable: false,
                 },
 
                 {
-                    field: "drivingLicenseNo",
-                    headerName: "Driving License No",
+                    field: "nIC_Number",
+                    headerName: "NIC",
                     width: 175,
                     sortable: false,
                 },
