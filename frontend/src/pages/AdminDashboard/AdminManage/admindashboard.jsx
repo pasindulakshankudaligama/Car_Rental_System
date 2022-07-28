@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Navbar from '../../../components/common/NavBar/Admin'
 import Sidebar from '../../../components/common/Sidebar'
 import Widget from '../../../components/common/widgets'
+import CustomerService from "../../../services/CustomerService";
 
 class AdminManageDashboard extends Component {
     constructor(props) {
@@ -17,6 +18,14 @@ class AdminManageDashboard extends Component {
             occupiedDrivers: '',
             needToMaintenance: '',
             underMaintenance: ''
+        }
+    }
+    usersCount = async () => {
+        const res = await CustomerService.customerCount();
+        if (res.status === 200) {
+            this.setState({
+                users: res.data.data
+            })
         }
     }
     render() {
