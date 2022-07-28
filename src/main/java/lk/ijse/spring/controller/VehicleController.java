@@ -40,4 +40,14 @@ public class VehicleController {
     public ResponseUtil getAllVehicles(){
         return new ResponseUtil(200,"OK",vehicleService.getAllVehicles());
     }
+
+    @GetMapping(path = "/status",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllByStatus(@RequestParam String status) {
+        return new ResponseUtil(200, "Ok", vehicleService.getAllVehiclesByStatus(status));
+    }
+
+    @GetMapping(path = "/count/status",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil countAllByStatus(@RequestParam String status) {
+        return new ResponseUtil(200, "Ok", vehicleService.countByStatus(status));
+    }
 }
