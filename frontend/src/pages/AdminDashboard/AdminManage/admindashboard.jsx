@@ -5,6 +5,20 @@ import Sidebar from '../../../components/common/Sidebar'
 import Widget from '../../../components/common/widgets'
 
 class AdminManageDashboard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            users: '',
+            bookings: '',
+            availableCars: '',
+            reservedCars: '',
+            activeBooking: '',
+            availableDrivers: '',
+            occupiedDrivers: '',
+            needToMaintenance: '',
+            underMaintenance: ''
+        }
+    }
     render() {
         return (
             <Grid container direction={'row'} columns='12'>
