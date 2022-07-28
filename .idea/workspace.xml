@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/service/impl/VehicleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/service/impl/VehicleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/controller/CustomerController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +232,7 @@
       <workItem from="1658936471408" duration="10530000" />
       <workItem from="1658950196819" duration="6738000" />
       <workItem from="1658958593483" duration="3038000" />
-      <workItem from="1658994092494" duration="8561000" />
+      <workItem from="1658994092494" duration="10270000" />
     </task>
     <servers />
   </component>

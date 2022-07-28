@@ -40,4 +40,9 @@ public class CustomerController {
     public ResponseUtil getAllCustomers(){
         return new ResponseUtil(200,"OK",customerService.getAllCustomers());
     }
+
+    @GetMapping(path = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil customerCount() {
+        return new ResponseUtil(200, "Ok", customerService.countCustomers());
+    }
 }
