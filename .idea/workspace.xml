@@ -11,10 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddVehicle/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddVehicle/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/Vehicle Manage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/Vehicle Manage/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/VehicleRates/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/VehicleRates/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/VehicleTypes/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/VehicleTypes/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +230,8 @@
       <workItem from="1658909016671" duration="7064000" />
       <workItem from="1658936471408" duration="10530000" />
       <workItem from="1658950196819" duration="6738000" />
-      <workItem from="1658958593483" duration="2777000" />
+      <workItem from="1658958593483" duration="3038000" />
+      <workItem from="1658994092494" duration="451000" />
     </task>
     <servers />
   </component>

@@ -33,7 +33,7 @@ class DriverManage extends Component {
             //  for data table
             columns: [
                 {
-                    field: "driverId",
+                    field: "driver_Id",
                     headerName: "Driver Id",
                     width: 200,
                 },
@@ -50,9 +50,15 @@ class DriverManage extends Component {
                     width: 200,
                     sortable: false,
                 },
+                {
+                    field: "type",
+                    headerName: "Status",
+                    width: 200,
+                    sortable: false,
+                },
 
                 {
-                    field: "mobileNo",
+                    field: "mobile_Number",
                     headerName: "Mobile No.",
                     width: 200,
                     sortable: false,
@@ -72,12 +78,7 @@ class DriverManage extends Component {
                     sortable: false,
                 },
 
-                {
-                    field: "status",
-                    headerName: "Status",
-                    width: 200,
-                    sortable: false,
-                },
+
 
                 {
                     field: "action",
