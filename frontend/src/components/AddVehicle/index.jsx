@@ -24,6 +24,12 @@ class AddNewVehicle extends Component {
                 "status": '',
                 "fuel_Type": '',
                 "running_Km": '',
+
+                "vehicleType": {
+                    "vehicle_Type_Id": '',
+                    "type": '',
+                    "loss_Damage_Waiver": '',
+                },
                 "rates": {
                     "rate_Id": '',
                     "daily_Rate": '',
@@ -31,11 +37,6 @@ class AddNewVehicle extends Component {
                     "free_Km_Day": '',
                     "free_Km_Month": '',
                     "extra_Km_Price": '',
-                },
-                "vehicleType": {
-                    "vehicle_Type_Id": '',
-                    "type": '',
-                    "loss_Damage_Waiver": '',
                 }
             },
             ratesData: [],
@@ -284,9 +285,9 @@ class AddNewVehicle extends Component {
                                 <TextValidator
                                     select
                                     label="Vehicle Type"
-                                    name="vehicleTypeId"
+                                    name="vehicle_Type_Id"
                                     onChange={this.handleChange}
-                                    value={this.state.formData.type.vehicle_Type_Id}
+                                    value={this.state.formData.vehicleType.vehicle_Type_Id}
                                     validators={["required"]}
                                     errorMessages={["This field is required"]}
                                     className="w-full"

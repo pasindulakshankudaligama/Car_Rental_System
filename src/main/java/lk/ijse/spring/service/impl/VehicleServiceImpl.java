@@ -71,7 +71,6 @@ public class VehicleServiceImpl implements VehicleService {
         }.getType());
     }
 
-
     @Override
     public long countByStatus(String status) {
         return repo.countVehiclesByStatus(status);
