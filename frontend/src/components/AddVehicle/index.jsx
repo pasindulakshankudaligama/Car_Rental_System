@@ -169,7 +169,7 @@ class AddNewVehicle extends Component {
 
             case "vehicle_Type_Id":
                 const vehicle_Type_Id = event.target.value;
-                this.setState(Object.assign(this.state.formData, {type: {vehicle_Type_Id: vehicle_Type_Id}}));
+                this.setState(Object.assign(this.state.formData, {vehicleType: {vehicle_Type_Id: vehicle_Type_Id}}));
                 break;
 
 
