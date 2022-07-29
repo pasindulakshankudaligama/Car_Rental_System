@@ -1,4 +1,4 @@
-import {Dialog, DialogContent, DialogTitle, Grid, IconButton, Typography,} from "@mui/material";
+import {Dialog, DialogContent, DialogTitle, Grid, IconButton, Tooltip, Typography,} from "@mui/material";
 import React, {Component} from "react";
 import Navbar from "../../../components/common/NavBar/Admin";
 import Sidebar from "../../../components/common/Sidebar";
@@ -9,6 +9,8 @@ import {withStyles} from "@mui/styles";
 import {styleSheet} from "./style";
 import CloseIcon from "@mui/icons-material/Close";
 import AddNewVehicle from "../../../components/AddVehicle";
+import VehicleService from "../../../services/VehicleService";
+import CustomSnackBar from "../../../components/common/SnackBar";
 
 class VehicleManage extends Component {
     constructor(props) {
@@ -46,7 +48,7 @@ class VehicleManage extends Component {
 
                 {
                     field: "fuel_Type",
-                    headerName: "Fule Type",
+                    headerName: "Fuel Type",
                     width: 150,
                 },
 
@@ -69,16 +71,32 @@ class VehicleManage extends Component {
                 },
 
                 {
-                    field: "rates",
+                    field: "rates.rate_Id",
                     headerName: "Rates",
                     width: 150,
+                    renderCell: (params) => {
+                        return (
+                            <>
+                                {console.log("ra", params)}
+                                {params.row.rates.rate_Id}
+                            </>
+                        )
+                    }
                 },
 
                 {
-                    field: "vehicleType",
+                    field: "vehicleType.vehicle_Type_Id",
                     headerName: "Type",
                     width: 150,
+                    renderCell: (params) => {
+                        return (
+                            <>
+                                {params.row.vehicleType.vehicle_Type_Id}
+                            </>
+                        )
+                    }
                 },
+
 
                 {
                     field: "status",
@@ -90,20 +108,105 @@ class VehicleManage extends Component {
                     field: "action",
                     headerName: "Action",
                     width: 150,
+                    renderCell: (params) => {
+                        return (
+                            <>
+                                <Tooltip title="Edit">
+                                    <IconButton onClick={async () => {
+                                        await this.updateVehicle(params.row);
+                                    }}>
+                                        <EditIcon className={'text-blue-500'}/>
+                                    </IconButton>
+                                </Tooltip>
+                                <Tooltip title="Delete">
+                                    <IconButton onClick={async () => {
+                                        await this.deleteVehicle(params.row.registrationNumber);
+                                    }}>
+                                        <DeleteIcon className={'text-red-500'}/>
+                                    </IconButton>
+                                </Tooltip>
+                            </>
+                        )
+                    }
                 },
             ],
         };
     }
 
+    updateVehicle = async (data) => {
+        const row = data;
+        console.log('data : ', data)
+        let updateVehicle = {
+            "registration_Number": row.registration_Number,
+            "colour": row.colour,
+            "no_Of_Passengers": row.no_Of_Passengers,
+            "transmission_Type": row.transmission_Type,
+            "brand": row.brand,
+            "status": row.status,
+            "fuel_Type": row.fuel_Type,
+            "running_Km": row.running_Km,
+
+            "vehicleType": {
+                "vehicle_Type_Id": row.vehicleType.vehicle_Type_Id,
+                "type": row.vehicleType.type,
+                "loss_Damage_Waiver": row.vehicleType.loss_Damage_Waiver,
+            },
+            "rates": {
+                "rate_Id": row.rates.rate_Id,
+                "daily_Rate": row.rates.daily_Rate,
+                "monthly_rate": row.rates.monthly_rate,
+                "free_Km_Day": row.rates.free_Km_Day,
+                "free_Km_Month": row.rates.free_Km_Month,
+                "extra_Km_Price": row.rates.extra_Km_Price,
+            }
+        }
+        await this.setState({updateVehicle: updateVehicle});
+        await this.setState({
+            popup: true,
+            isUpdate: true
+        })
+    }
+
+    deleteVehicle = async (id) => {
+        let params = {
+            registration_Number: id
+        }
+        let res = await VehicleService.deleteVehicle(params);
+        console.log(res)
+        if (res.status === 200) {
+            this.setState({
+                alert: true,
+                message: res.data.message,
+                severity: 'success'
+            });
+            this.loadData();
+        } else {
+            this.setState({
+                alert: true,
+                message: res.message,
+                severity: 'error'
+            });
+        }
+    }
+
+
     async loadData() {
-        // let resp = await PostService.fetchPosts();
-        const data = [];
-        this.setState({
-            loaded: true,
-            data: data,
-        });
-        console.log(this.state.data);
-        // console.log(JSON.stringify(resp.data));
+        let resp = await VehicleService.fetchVehicle();
+        let nData = [];
+        if (resp.status === 200) {
+            resp.data.data.map((value, index) => {
+                value.id = value.registration_Number;
+                // value.type = value.type.type
+                // value.rateId = value.rates.rateId
+                nData.push(value)
+            })
+            console.log("nData : ", nData)
+            this.setState({
+                loaded: true,
+                data: nData,
+            });
+        }
+        console.log("load data : ", this.state.data)
     }
 
     componentDidMount() {
@@ -114,27 +217,28 @@ class VehicleManage extends Component {
     render() {
         const {classes} = this.props;
         return (
-            <Grid container direction={"row"} columns="12">
-                <Grid item xs={"auto"}>
-                    <Sidebar/>
-                </Grid>
-                <Grid item xs className="">
-                    <Navbar/>
-                    <Grid container item xs={"auto"} className="flex p-5 gap-5">
-                        <Grid
-                            container
-                            item
-                            xs={12}
-                            gap="5px"
-                            className="rounded-lg p-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
-                        >
-                            <CommonButton
-                                variant="outlined"
-                                label="Add Vehicle"
-                                onClick={() => this.setState({popup: true})}
-                                startIcon={<AddIcon/>}
-                            />
-                            <CommonButton
+            <>
+                <Grid container direction={"row"} columns="12">
+                    <Grid item xs={"auto"}>
+                        <Sidebar/>
+                    </Grid>
+                    <Grid item xs className="">
+                        <Navbar/>
+                        <Grid container item xs={"auto"} className="flex p-5 gap-5">
+                            <Grid
+                                container
+                                item
+                                xs={12}
+                                gap="5px"
+                                className="rounded-lg p-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                            >
+                                <CommonButton
+                                    variant="outlined"
+                                    label="Add Vehicle"
+                                    onClick={() => this.setState({popup: true, isUpdate: false})}
+                                    startIcon={<AddIcon/>}
+                                />
+                                {/*    <CommonButton
                                 variant="outlined"
                                 label="Add Vehicle Rates"
                                 startIcon={<AddIcon/>}
@@ -143,23 +247,24 @@ class VehicleManage extends Component {
                                 variant="outlined"
                                 label="Add Vehicle Types"
                                 startIcon={<AddIcon/>}
-                            />
-                        </Grid>
-                        <Grid
-                            container
-                            item
-                            xs={12}
-                            gap="5px"
-                            className="rounded-lg p-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
-                            style={{height: "700px"}}
-                        >
-                            <CommonDataTable
-                                columns={this.state.columns}
-                                rows={this.state.data}
-                                rowsPerPageOptions={5}
-                                pageSize={10}
-                                // checkboxSelection={true}
-                            />
+                            />*/}
+                            </Grid>
+                            <Grid
+                                container
+                                item
+                                xs={12}
+                                gap="5px"
+                                className="rounded-lg p-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                                style={{height: "700px"}}
+                            >
+                                <CommonDataTable
+                                    columns={this.state.columns}
+                                    rows={this.state.data}
+                                    rowsPerPageOptions={5}
+                                    pageSize={10}
+                                    // checkboxSelection={true}
+                                />
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -184,11 +289,21 @@ class VehicleManage extends Component {
                             </IconButton>
                         </div>
                     </DialogTitle>
-                    <DialogContent dividers>
-                        <AddNewVehicle/>
+                    <DialogContent dividers>{console.log("update", this.state.updateVehicle)}
+                        <AddNewVehicle/>isUpdate={this.state.isUpdate} obj={this.state.updateVehicle} />
                     </DialogContent>
                 </Dialog>
-            </Grid>
+                <CustomSnackBar
+                    open={this.state.alert}
+                    onClose={() => {
+                        this.setState({alert: false})
+                    }}
+                    message={this.state.message}
+                    autoHideDuration={3000}
+                    severity={this.state.severity}
+                    variant={'filled'}
+                />
+            </>
         );
     }
 }

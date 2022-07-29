@@ -36,6 +36,17 @@ class VehicleService {
         });
         return await promise;
     }
+    deleteVehicle = async (params) => {
+        const promise = new Promise((resolve, reject) => {
+            axios.delete('vehicle',{params:params})
+                .then((res) => {
+                    return resolve(res)
+                }).catch((err) => {
+                return resolve(err)
+            })
+        })
+        return await promise;
+    }
 
     countByStatus = async (data) =>{
         const promise = new Promise((resolve, reject) => {
