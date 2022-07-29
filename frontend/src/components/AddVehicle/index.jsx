@@ -16,27 +16,27 @@ class AddNewVehicle extends Component {
         super(props);
         this.state = {
             formData: {
-                "registration_Number": '',
-                "colour": '',
-                "no_Of_Passengers": '',
-                "transmission_Type": '',
-                "brand": '',
-                "status": '',
-                "fuel_Type": '',
-                "running_Km": '',
+                "registration_Number": props.isUpdate ? props.obj.registration_Number : '',
+                "colour": props.isUpdate ? props.obj.colour : '',
+                "no_Of_Passengers": props.isUpdate ? props.obj.no_Of_Passengers : '',
+                "transmission_Type": props.isUpdate ? props.obj.transmission_Type : '',
+                "brand": props.isUpdate ? props.obj.brand : '',
+                "status": props.isUpdate ? props.obj.status : '',
+                "fuel_Type": props.isUpdate ? props.obj.fuel_Type : '',
+                "running_Km": props.isUpdate ? props.obj.running_Km : '',
 
                 "vehicleType": {
-                    "vehicle_Type_Id": '',
-                    "type": '',
-                    "loss_Damage_Waiver": '',
+                    "vehicle_Type_Id": props.isUpdate ? props.obj.vehicleType.vehicle_Type_Id : '',
+                    "type": props.isUpdate ? props.obj.vehicleType.type : '',
+                    "loss_Damage_Waiver": props.isUpdate ? props.obj.vehicleType.loss_Damage_Waiver : '',
                 },
                 "rates": {
-                    "rate_Id": '',
-                    "daily_Rate": '',
-                    "monthly_rate": '',
-                    "free_Km_Day": '',
-                    "free_Km_Month": '',
-                    "extra_Km_Price": '',
+                    "rate_Id": props.isUpdate ? props.obj.rates.rate_Id : '',
+                    "daily_Rate": props.isUpdate ? props.obj.rates.daily_Rate : '',
+                    "monthly_rate": props.isUpdate ? props.obj.rates.monthly_rate : '',
+                    "free_Km_Day": props.isUpdate ? props.obj.rates.free_Km_Day : '',
+                    "free_Km_Month": props.isUpdate ? props.obj.rates.free_Km_Month : '',
+                    "extra_Km_Price": props.isUpdate ? props.obj.rates.extra_Km_Price : '',
                 }
             },
             ratesData: [],
@@ -86,7 +86,20 @@ class AddNewVehicle extends Component {
         console.log("hi")
         let formDate = this.state.formData
         if (this.props.isUpdate) {
-            console.log("hi1")
+            let res = await VehicleService.updateVehicle(formDate)
+            if (res.status === 200) {
+                this.setState({
+                    alert: true,
+                    message: 'Vehicle Updated!',
+                    severity: 'success'
+                })
+            } else {
+                this.setState({
+                    alert: true,
+                    message: res.data.message,
+                    severity: 'error'
+                })
+            }
         } else {
             console.log("hi2")
             let res = await VehicleService.postVehicle(formDate)
