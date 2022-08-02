@@ -101,9 +101,14 @@ class AddNewVehicle extends Component {
                 })
             }
         } else {
-            console.log("hi2")
-            let res = await VehicleService.postVehicle(formDate)
-            if (res.status === 201) {
+            let data = new FormData();
+            data.append("vehicle", JSON.stringify(formDate));
+            data.append("myFile", this.state.file)
+            console.log(this.state.file)
+            console.log(this.state.file.name)
+
+            let res = await VehicleService.postVehicleIMG(data)
+            if (res.status === 200) {
                 this.setState({
                     alert: true,
                     message: 'Vehicle Saved!',
@@ -112,7 +117,7 @@ class AddNewVehicle extends Component {
             } else {
                 this.setState({
                     alert: true,
-                    message: res.data.message,
+                    message: res.message,
                     severity: 'error'
                 })
             }
