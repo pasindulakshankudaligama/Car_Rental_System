@@ -182,6 +182,12 @@ class AddNewVehicle extends Component {
                 break;
         }
     };
+    handleFile(e) {
+        let file = e.target.files[0]
+        this.setState({
+            file: file
+        })
+    }
 
     render() {
         const {classes} = this.props;
