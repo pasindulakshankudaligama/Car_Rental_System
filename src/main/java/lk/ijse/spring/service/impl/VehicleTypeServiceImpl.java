@@ -2,7 +2,7 @@ package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.Vehicle_TypeDTO;
 import lk.ijse.spring.entity.Vehicle_Type;
-import lk.ijse.spring.repo.Vehicle_TypeRepo;
+import lk.ijse.spring.repo.VehicleTypeRepo;
 import lk.ijse.spring.service.VehicleTypeService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -16,7 +16,7 @@ import java.util.List;
 public class VehicleTypeServiceImpl implements VehicleTypeService {
 
     @Autowired
-    private Vehicle_TypeRepo repo;
+    private VehicleTypeRepo repo;
 
     @Autowired
     private ModelMapper mapper;

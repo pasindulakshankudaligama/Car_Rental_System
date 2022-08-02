@@ -9,7 +9,7 @@ import lk.ijse.spring.dto.Vehicle_TypeDTO;
 import lk.ijse.spring.entity.Vehicle;
 import lk.ijse.spring.repo.RateRepo;
 import lk.ijse.spring.repo.VehicleRepo;
-import lk.ijse.spring.repo.Vehicle_TypeRepo;
+import lk.ijse.spring.repo.VehicleTypeRepo;
 import lk.ijse.spring.service.VehicleService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -40,27 +40,26 @@ public class VehicleServiceImpl implements VehicleService {
     private RateRepo ratesRepo;
 
     @Autowired
-    private Vehicle_TypeRepo vehicleTypeRepo;
-
+    private VehicleTypeRepo vehicleTypeRepo;
 
     @Override
     public void saveVehicle(VehicleDTO dto) {
         if (!repo.existsById(dto.getRegistration_Number())) {
 
-            if (vehicleTypeRepo.existsById(dto.getVehicleType().getVehicle_Type_Id())) {
-                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByvehicle_Type_Id(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
+          /*  if (vehicleTypeRepo.existsById(dto.getVehicleType().getVehicle_Type_Id())) {
+                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByVehicle_Type_Id(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
                 dto.setVehicleType(type);
             } else {
                 throw new RuntimeException("Please Check the Vehicle Type ID");
             }
 
             if (ratesRepo.existsById(dto.getRates().getRate_Id())) {
-                RatesDTO rates = mapper.map(ratesRepo.findByrate_Id(dto.getRates().getRate_Id()), RatesDTO.class);
+                RatesDTO rates = mapper.map(ratesRepo.findByRate_Id(dto.getRates().getRate_Id()), RatesDTO.class);
                 dto.setRates(rates);
             } else {
                 throw new RuntimeException("Please Check the RateID");
             }
-
+*/
             repo.save(mapper.map(dto, Vehicle.class));
         } else {
             throw new RuntimeException("Vehicle Already Exist");
@@ -80,20 +79,20 @@ public class VehicleServiceImpl implements VehicleService {
     public void updateVehicle(VehicleDTO dto) {
         if (repo.existsById(dto.getRegistration_Number())) {
 
-            if (vehicleTypeRepo.existsById(dto.getVehicleType().getVehicle_Type_Id())) {
-                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByvehicle_Type_Id(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
+          /*  if (vehicleTypeRepo.existsById(dto.getVehicleType().getVehicle_Type_Id())) {
+                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByVehicle_Type_Id(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
                 dto.setVehicleType(type);
             } else {
                 throw new RuntimeException("Please Check the Vehicle Type ID");
             }
 
             if (ratesRepo.existsById(dto.getRates().getRate_Id())) {
-                RatesDTO rates = mapper.map(ratesRepo.findByrate_Id(dto.getRates().getRate_Id()), RatesDTO.class);
+                RatesDTO rates = mapper.map(ratesRepo.findByRate_Id(dto.getRates().getRate_Id()), RatesDTO.class);
                 dto.setRates(rates);
             } else {
                 throw new RuntimeException("Please Check the RateID");
             }
-
+*/
             repo.save(mapper.map(dto, Vehicle.class));
         } else {
             throw new RuntimeException("Please check the Registration Number... No Such Vehicle to Update!");
@@ -168,5 +167,7 @@ public class VehicleServiceImpl implements VehicleService {
             throw new RuntimeException("Vehicle Already Exist");
         }
     }
+
+
 }
 
