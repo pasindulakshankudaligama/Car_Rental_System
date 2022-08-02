@@ -2,10 +2,14 @@ package lk.ijse.spring.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lk.ijse.spring.dto.RatesDTO;
 import lk.ijse.spring.dto.VehicleDTO;
 import lk.ijse.spring.dto.Vehicle_IMGDTO;
+import lk.ijse.spring.dto.Vehicle_TypeDTO;
 import lk.ijse.spring.entity.Vehicle;
+import lk.ijse.spring.repo.RateRepo;
 import lk.ijse.spring.repo.VehicleRepo;
+import lk.ijse.spring.repo.Vehicle_TypeRepo;
 import lk.ijse.spring.service.VehicleService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -32,13 +36,34 @@ public class VehicleServiceImpl implements VehicleService {
     @Autowired
     private ObjectMapper objectMapper;
 
+    @Autowired
+    private RateRepo ratesRepo;
+
+    @Autowired
+    private Vehicle_TypeRepo vehicleTypeRepo;
+
+
     @Override
     public void saveVehicle(VehicleDTO dto) {
         if (!repo.existsById(dto.getRegistration_Number())) {
 
+            if (vehicleTypeRepo.existsById(dto.getVehicleType().getVehicle_Type_Id())) {
+                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByVehicleTypeId(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
+                dto.setVehicleType(type);
+            } else {
+                throw new RuntimeException("Please Check the Vehicle Type ID");
+            }
+
+            if (ratesRepo.existsById(dto.getRates().getRate_Id())) {
+                RatesDTO rates = mapper.map(ratesRepo.findByRateId(dto.getRates().getRate_Id()), RatesDTO.class);
+                dto.setRates(rates);
+            } else {
+                throw new RuntimeException("Please Check the RateID");
+            }
+
             repo.save(mapper.map(dto, Vehicle.class));
         } else {
-            throw new RuntimeException("Vehicle Already Exist..!");
+            throw new RuntimeException("Vehicle Already Exist");
         }
     }
 
