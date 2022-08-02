@@ -1,6 +1,7 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.VehicleDTO;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -18,4 +19,8 @@ public interface VehicleService {
     List<VehicleDTO> getAllVehiclesByStatus(String status);
 
     long countByStatus(String status);
+
+    VehicleDTO vehicleDetails(String regNo);
+
+    void saveVehicleWithImg(String vehicle, MultipartFile file);
 }
