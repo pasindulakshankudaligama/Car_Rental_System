@@ -13,9 +13,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/backend/backend.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/backend/backend.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/entity/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/entity/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/repo/RateRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/repo/RateRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/repo/Vehicle_TypeRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/repo/Vehicle_TypeRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/service/impl/VehicleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/service/impl/VehicleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -242,7 +239,7 @@
       <workItem from="1659072352987" duration="3249000" />
       <workItem from="1659115470145" duration="8739000" />
       <workItem from="1659418306681" duration="1738000" />
-      <workItem from="1659444789665" duration="7759000" />
+      <workItem from="1659444789665" duration="10647000" />
     </task>
     <servers />
   </component>

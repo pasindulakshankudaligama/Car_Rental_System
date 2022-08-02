@@ -33,6 +33,6 @@ public class Vehicle {
     private Vehicle_Type vehicleType;
 
     @OneToMany(targetEntity = Vehicle_IMG.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "img_Id", referencedColumnName = "registration_Number")
+    @JoinColumn(name = "carId", referencedColumnName = "registration_Number")
     private List<Vehicle_IMG> img;
 }
