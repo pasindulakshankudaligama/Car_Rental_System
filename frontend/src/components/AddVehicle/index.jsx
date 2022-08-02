@@ -355,13 +355,13 @@ class AddNewVehicle extends Component {
                                     className={classes.btnUpload}
                                 >
                                     Upload Image
-                                    <input type="file" accept="image/*" hidden/>
+                                    <input type="file" accept="image/*" hidden onChange={(e) => this.handleFile(e)}/>
                                 </Button>
                             </Grid>
                             <CommonButton
                                 size="large"
                                 variant="contained"
-                                label="Add"
+                                label={this.props.isUpdate?'Update':'Add'}
                                 type="submit"
                                 className="text-white bg-blue-500 font-bold tracking-wide"
                                 style={{backgroundColor: 'rgba(25, 118, 210, 0.95)', width: '100%'}}
