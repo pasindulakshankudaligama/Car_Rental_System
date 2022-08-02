@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -74,5 +75,15 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public long countByStatus(String status) {
         return repo.countVehiclesByStatus(status);
+    }
+
+    @Override
+    public VehicleDTO vehicleDetails(String regNo) {
+        return mapper.map(repo.findById(regNo), VehicleDTO.class);
+    }
+
+    @Override
+    public void saveVehicleWithImg(String vehicle, MultipartFile file) {
+
     }
 }
