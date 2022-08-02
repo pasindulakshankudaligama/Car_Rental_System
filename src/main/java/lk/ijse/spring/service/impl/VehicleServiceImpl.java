@@ -48,14 +48,14 @@ public class VehicleServiceImpl implements VehicleService {
         if (!repo.existsById(dto.getRegistration_Number())) {
 
             if (vehicleTypeRepo.existsById(dto.getVehicleType().getVehicle_Type_Id())) {
-                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByVehicleTypeId(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
+                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByvehicle_Type_Id(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
                 dto.setVehicleType(type);
             } else {
                 throw new RuntimeException("Please Check the Vehicle Type ID");
             }
 
             if (ratesRepo.existsById(dto.getRates().getRate_Id())) {
-                RatesDTO rates = mapper.map(ratesRepo.findByRateId(dto.getRates().getRate_Id()), RatesDTO.class);
+                RatesDTO rates = mapper.map(ratesRepo.findByrate_Id(dto.getRates().getRate_Id()), RatesDTO.class);
                 dto.setRates(rates);
             } else {
                 throw new RuntimeException("Please Check the RateID");
@@ -81,14 +81,14 @@ public class VehicleServiceImpl implements VehicleService {
         if (repo.existsById(dto.getRegistration_Number())) {
 
             if (vehicleTypeRepo.existsById(dto.getVehicleType().getVehicle_Type_Id())) {
-                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByVehicleTypeId(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
+                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByvehicle_Type_Id(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
                 dto.setVehicleType(type);
             } else {
                 throw new RuntimeException("Please Check the Vehicle Type ID");
             }
 
             if (ratesRepo.existsById(dto.getRates().getRate_Id())) {
-                RatesDTO rates = mapper.map(ratesRepo.findByRateId(dto.getRates().getRate_Id()), RatesDTO.class);
+                RatesDTO rates = mapper.map(ratesRepo.findByrate_Id(dto.getRates().getRate_Id()), RatesDTO.class);
                 dto.setRates(rates);
             } else {
                 throw new RuntimeException("Please Check the RateID");
