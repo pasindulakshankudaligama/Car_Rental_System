@@ -21,6 +21,9 @@ class VehicleManage extends Component {
             message: "",
             severity: "",
 
+            updateVehicle:{},
+            isUpdate: false,
+
             //  for table
             data: [],
             loaded: false,
@@ -212,6 +215,11 @@ class VehicleManage extends Component {
     componentDidMount() {
         this.loadData();
         console.log("Mounted");
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevState.popup == true) {
+            this.loadData()
+        }
     }
 
     render() {
