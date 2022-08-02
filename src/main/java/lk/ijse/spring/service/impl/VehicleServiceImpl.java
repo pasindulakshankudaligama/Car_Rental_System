@@ -1,6 +1,9 @@
 package lk.ijse.spring.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lk.ijse.spring.dto.VehicleDTO;
+import lk.ijse.spring.dto.Vehicle_IMGDTO;
 import lk.ijse.spring.entity.Vehicle;
 import lk.ijse.spring.repo.VehicleRepo;
 import lk.ijse.spring.service.VehicleService;
@@ -11,6 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,6 +28,9 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Autowired
     private ModelMapper mapper;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @Override
     public void saveVehicle(VehicleDTO dto) {
@@ -84,6 +94,39 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public void saveVehicleWithImg(String vehicle, MultipartFile file) {
+        VehicleDTO vehicleDTO = null;
+        String path = null;
+        try {
+            vehicleDTO = objectMapper.readValue(vehicle, VehicleDTO.class);
 
+            System.out.println(vehicleDTO);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        if (!repo.existsById(vehicleDTO.getRegistration_Number())) {
+
+            try {
+                String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+                File uploadDir = new File(projectPath + "/uploads");
+                uploadDir.mkdir();
+                file.transferTo(new File(uploadDir.getAbsolutePath() + "/" + file.getOriginalFilename()));
+                path = "uploads/" + file.getOriginalFilename();
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Vehicle_IMGDTO imgDTO = new Vehicle_IMGDTO();
+            imgDTO.setPath(path);
+            ArrayList<Vehicle_IMGDTO> carImgDTO = new ArrayList<Vehicle_IMGDTO>();
+            carImgDTO.add(imgDTO);
+            System.out.println(imgDTO.getPath());
+            vehicleDTO.setImg(carImgDTO);
+            repo.save(mapper.map(vehicleDTO, Vehicle.class));
+
+        } else {
+            throw new RuntimeException("Vehicle Already Exist");
+        }
     }
 }
+

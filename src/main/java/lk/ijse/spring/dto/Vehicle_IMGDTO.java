@@ -1,6 +1,5 @@
 package lk.ijse.spring.dto;
 
-import lk.ijse.spring.entity.Vehicle;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +11,5 @@ import lombok.ToString;
 @ToString
 public class Vehicle_IMGDTO {
     private String img_Id;
-    private String description;
-    private Vehicle vehicle;
+    private String path;
 }
