@@ -191,7 +191,7 @@ class VehicleManage extends Component {
 
 
     async loadData() {
-        let resp = await VehicleService.fetchVehicle();
+        let resp = await VehicleService.fetchVehicles();
         let nData = [];
         if (resp.status === 200) {
             resp.data.data.map((value, index) => {

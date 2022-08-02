@@ -14,7 +14,7 @@ class VehicleService {
         return await promise;
     }
 
-    fetchVehicle = async (data) => {
+    fetchVehicles = async (data) => {
         const promise = new Promise((resolve, reject) => {
             axios.get('vehicle')
                 .then((res) => {
@@ -51,6 +51,17 @@ class VehicleService {
     countByStatus = async (data) =>{
         const promise = new Promise((resolve, reject) => {
             axios.get('vehicle/count/status',{params:{status:data}})
+                .then((res) => {
+                    return resolve(res)
+                }).catch((err) => {
+                return resolve(err)
+            })
+        })
+        return await promise;
+    }
+    fetchVehicle = async (id) =>{
+        const promise = new Promise((resolve, reject) => {
+            axios.get('vehicle/regNo',{params:{regNo:id}})
                 .then((res) => {
                     return resolve(res)
                 }).catch((err) => {
