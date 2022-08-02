@@ -79,9 +79,24 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public void updateVehicle(VehicleDTO dto) {
         if (repo.existsById(dto.getRegistration_Number())) {
+
+            if (vehicleTypeRepo.existsById(dto.getVehicleType().getVehicle_Type_Id())) {
+                Vehicle_TypeDTO type = mapper.map(vehicleTypeRepo.findByVehicleTypeId(dto.getVehicleType().getVehicle_Type_Id()), Vehicle_TypeDTO.class);
+                dto.setVehicleType(type);
+            } else {
+                throw new RuntimeException("Please Check the Vehicle Type ID");
+            }
+
+            if (ratesRepo.existsById(dto.getRates().getRate_Id())) {
+                RatesDTO rates = mapper.map(ratesRepo.findByRateId(dto.getRates().getRate_Id()), RatesDTO.class);
+                dto.setRates(rates);
+            } else {
+                throw new RuntimeException("Please Check the RateID");
+            }
+
             repo.save(mapper.map(dto, Vehicle.class));
         } else {
-            throw new RuntimeException("No Such Vehicle To Update..! Please Check the Registration Number..!");
+            throw new RuntimeException("Please check the Registration Number... No Such Vehicle to Update!");
         }
 
     }
