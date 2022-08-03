@@ -3,7 +3,6 @@ import {Grid, Typography} from "@mui/material";
 import NavBarVehicle from "../../components/common/NavBar/User";
 import Footer from "../../components/Footer";
 import SideRent from "../../components/SideRent";
-import {withRouter} from '../../withRouter'
 import vehicleService from "../../services/VehicleService";
 
 

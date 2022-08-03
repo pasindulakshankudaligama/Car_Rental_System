@@ -11,17 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/backend/backend.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/backend/backend.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/entity/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/entity/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/entity/Vehicle_IMG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/entity/Vehicle_IMG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/entity/Vehicle_IMG_PK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/entity/Vehicle_IMG_PK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/repo/RateRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/repo/RateRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/repo/Vehicle_TypeRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/repo/VehicleTypeRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/service/impl/VehicleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/service/impl/VehicleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/service/impl/VehicleTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/service/impl/VehicleTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/repo/RateRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/repo/RateRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/repo/Vehicle_TypeRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/VehicleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/VehicleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SideRent/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SideRent/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/DetailsOfAVehicle/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/DetailsOfAVehicle/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +239,8 @@
       <workItem from="1659072352987" duration="3249000" />
       <workItem from="1659115470145" duration="8739000" />
       <workItem from="1659418306681" duration="1738000" />
-      <workItem from="1659444789665" duration="15346000" />
+      <workItem from="1659444789665" duration="22222000" />
+      <workItem from="1659500150602" duration="583000" />
     </task>
     <servers />
   </component>
