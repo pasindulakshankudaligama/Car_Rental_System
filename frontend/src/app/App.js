@@ -14,6 +14,7 @@ import CustomerManage from "../pages/AdminDashboard/CustomerManage";
 import ViewAllVehicles from "../pages/ViewAllVehicles";
 import DetailsOfAVehicle from "../pages/DetailsOfAVehicle";
 import RegisterCustomer from "../components/RegisterCustomer";
+import RentalRequests from "../pages/RentalRequests";
 
 function App() {
     return (
@@ -28,7 +29,7 @@ function App() {
                 <Route index element={<LoginAdmin/>}/>
                 <Route path="dashboard">
                     <Route index element={<AdminManageDashboard/>}/>
-                   {/* <Route path="rentalrequests" element={<RentalRequests/>}/>*/}
+                    <Route path="rentalrequests" element={<RentalRequests/>}/>
                     <Route path="vehiclemanage" element={<VehicleManage />} />
                     <Route path="vehiclerates" element={<VehicleRates/>}/>
                     <Route path="vehicletype" element={<VehicleType/>}/>
