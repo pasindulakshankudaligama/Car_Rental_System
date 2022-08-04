@@ -13,6 +13,7 @@ import EmployeeManage from "../pages/AdminDashboard/EmployeeManage";
 import CustomerManage from "../pages/AdminDashboard/CustomerManage";
 import ViewAllVehicles from "../pages/ViewAllVehicles";
 import DetailsOfAVehicle from "../pages/DetailsOfAVehicle";
+import RegisterCustomer from "../components/RegisterCustomer";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="dashboard" element={<AdminManageDashboard/>}/>
             <Route path="/vehicles" element={<ViewAllVehicles/>}/>
             <Route path="/vehicles/:regNumber" element={<DetailsOfAVehicle/>}/>
+            <Route path="/register" element={<RegisterCustomer/>}/>
 
             <Route path="admin">
                 <Route index element={<LoginAdmin/>}/>
