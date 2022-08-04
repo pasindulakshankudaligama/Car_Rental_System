@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/dto/License_or_NIC_IMGDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/spring/dto/License_or_NIC_IMGDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +240,7 @@
       <workItem from="1659444789665" duration="22222000" />
       <workItem from="1659500150602" duration="3087000" />
       <workItem from="1659608858161" duration="911000" />
-      <workItem from="1659617351936" duration="576000" />
+      <workItem from="1659617351936" duration="892000" />
     </task>
     <servers />
   </component>
