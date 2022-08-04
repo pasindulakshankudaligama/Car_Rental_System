@@ -11,9 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SideRent/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SideRent/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +105,6 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.77" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.77" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/backend/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="backend">
@@ -242,6 +238,8 @@
       <workItem from="1659418306681" duration="1738000" />
       <workItem from="1659444789665" duration="22222000" />
       <workItem from="1659500150602" duration="3087000" />
+      <workItem from="1659608858161" duration="911000" />
+      <workItem from="1659617351936" duration="576000" />
     </task>
     <servers />
   </component>

@@ -11,6 +11,6 @@ import lombok.ToString;
 @ToString
 public class License_or_NIC_IMGDTO {
     private String img_Id;
-    private String description;
+    private String path;
 
 }
