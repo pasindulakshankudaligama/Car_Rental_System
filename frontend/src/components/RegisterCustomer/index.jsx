@@ -8,7 +8,6 @@ import CommonButton from "../common/Button";
 import CustomSnackBar from "../common/SnackBar";
 import HomeIcon from '@mui/icons-material/Home';
 import {Link} from "react-router-dom";
-import { Navigate } from "react-router-dom";
 import CustomerService from "../../services/CustomerService";
 
 class RegisterCustomer extends Component {
