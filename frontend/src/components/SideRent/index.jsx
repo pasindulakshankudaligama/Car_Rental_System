@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import {Button, Checkbox, FormControlLabel, Grid, Typography} from "@mui/material";
-
-import {AdapterMoment} from '@mui/x-date-pickers/AdapterMoment';
 import {DesktopDatePicker} from '@mui/x-date-pickers/DesktopDatePicker';
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 import CommonButton from "../common/Button";
 import {TextValidator, ValidatorForm} from "react-material-ui-form-validator";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
+import {AdapterMoment} from "@mui/x-date-pickers/AdapterMoment";
 
 
 class SideRent extends Component {
+    handleChangeDate;
+    selectedDate;
     constructor(props) {
         super(props);
         this.state = {
