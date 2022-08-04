@@ -26,6 +26,7 @@ function App() {
                 <Route index element={<LoginAdmin/>}/>
                 <Route path="dashboard">
                     <Route index element={<AdminManageDashboard/>}/>
+                   {/* <Route path="rentalrequests" element={<RentalRequests/>}/>*/}
                     <Route path="vehiclemanage" element={<VehicleManage />} />
                     <Route path="vehiclerates" element={<VehicleRates/>}/>
                     <Route path="vehicletype" element={<VehicleType/>}/>
