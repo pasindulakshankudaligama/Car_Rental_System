@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("customer")
@@ -44,5 +45,16 @@ public class CustomerController {
     @GetMapping(path = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil customerCount() {
         return new ResponseUtil(200, "Ok", customerService.countCustomers());
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil uploadFile(@RequestParam("file") MultipartFile myFile, @RequestParam("customer") String customer){
+        System.out.println("Hey");
+        System.out.println(customer);
+        System.out.println(myFile.getName());
+
+        customerService.saveCustomerWithImg(customer,myFile);
+        return new ResponseUtil(200, "New User Create Successfully", null);
     }
 }

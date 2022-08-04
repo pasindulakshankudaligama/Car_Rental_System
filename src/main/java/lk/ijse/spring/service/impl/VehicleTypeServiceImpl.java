@@ -50,7 +50,6 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
 
     @Override
     public List<Vehicle_TypeDTO> getAllVehicleType() {
-
         return mapper.map(repo.findAll(),new TypeToken<List<Vehicle_TypeDTO>>(){
         }.getType());
     }
