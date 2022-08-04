@@ -14,7 +14,7 @@ class CustomerService {
         return await promise;
     }
 
-    fetchCustomer = async (data) => {
+    fetchCustomers = async (data) => {
         const promise = new Promise((resolve, reject) => {
             axios.get('customer')
                 .then((res) => {
