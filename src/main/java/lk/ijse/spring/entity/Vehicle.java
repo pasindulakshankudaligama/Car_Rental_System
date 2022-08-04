@@ -31,6 +31,7 @@ public class Vehicle {
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "vehicle_Type_Id",referencedColumnName = "vehicle_Type_Id",nullable = false)
     private Vehicle_Type vehicleType;
+
     @OneToMany(targetEntity = Vehicle_IMG.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "carId", referencedColumnName = "registration_Number")
     private List<Vehicle_IMG> img;
