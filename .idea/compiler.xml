@@ -11,8 +11,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BackEnd" target="1.8" />
       <module name="Car_Rent_System(Back_End)" target="8" />
-      <module name="Frontend" target="8" />
+      <module name="Frontend" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

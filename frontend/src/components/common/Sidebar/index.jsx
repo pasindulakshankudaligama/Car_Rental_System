@@ -82,7 +82,7 @@ class Sidebar extends Component {
                                 component={"span"}
                                 className="text-sm font-semibold text-gray-700"
                             >
-                                Vehicle Reats
+                                Vehicle Rates
                             </Typography>
                         </li>
                     </Link>

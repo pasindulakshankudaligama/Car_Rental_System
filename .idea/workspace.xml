@@ -10,9 +10,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="490ca6e6-4f82-4a3e-a566-6fa387e796d9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Car Section/GeneralCars/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Car Section/GeneralCars/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Car Section/LuxuryCars/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Car Section/LuxuryCars/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Car Section/PremiumCars/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Car Section/PremiumCars/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/common/Sidebar/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/common/Sidebar/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/common/VehicleCard/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/common/VehicleCard/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/Vehicle Manage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard/Vehicle Manage/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/RentalRequests/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/RentalRequests/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/session/Login/driver/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/session/Login/driver/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/session/Login/user/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/session/Login/user/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/services/CustomerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/CustomerService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/VehicleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/VehicleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/backend/backend.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/backend/backend.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/controller/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/dto/CustomerDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/dto/CustomerDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/dto/License_or_NIC_IMGDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/dto/License_or_NIC_IMGDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/entity/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/entity/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/entity/License_or_NIC_IMG.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/entity/License_or_NIC_IMG.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/entity/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/entity/Vehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/CustomerServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/CustomerServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/CustomerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/VehicleTypeServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/VehicleTypeServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/VehicleTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/spring/service/impl/VehicleTypeServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +90,16 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2BW5CsOh7jqaxFtTKiOhHAVQHtX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -71,20 +108,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/pages" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Car_Rental_System",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "d82dd23e0e1680c63de5a4b228e9954d"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/src/pages" />
@@ -106,6 +137,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="BackEnd" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="BackEnd" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.77" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.77" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -116,7 +160,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="16abf504-5ffa-4cdf-ae6d-ac259f70d7e8" />
+        <option name="BASE_DIRECTORY_NAME" value="ec8ea0c2-4b51-42d2-abad-38816fefd1e4" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -124,7 +168,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="39467" />
+        <option name="DEBUG_PORT" value="59769" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -242,6 +286,8 @@
       <workItem from="1659500150602" duration="3087000" />
       <workItem from="1659608858161" duration="911000" />
       <workItem from="1659617351936" duration="8520000" />
+      <workItem from="1659630301981" duration="12019000" />
+      <workItem from="1659670075993" duration="2452000" />
     </task>
     <servers />
   </component>
@@ -258,7 +304,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

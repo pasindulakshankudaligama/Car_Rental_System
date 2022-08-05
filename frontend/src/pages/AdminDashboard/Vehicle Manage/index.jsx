@@ -11,6 +11,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import AddNewVehicle from "../../../components/AddVehicle";
 import VehicleService from "../../../services/VehicleService";
 import CustomSnackBar from "../../../components/common/SnackBar";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+
 
 class VehicleManage extends Component {
     constructor(props) {

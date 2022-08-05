@@ -2,8 +2,36 @@ import { Grid, Typography } from "@mui/material";
 import React, { Component } from "react";
 import CommonButton from "../../common/Button";
 import VehicleCard from "../../common/VehicleCard";
+import vehicleService from "../../../services/VehicleService";
 
 class LuxuryCars extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state={
+            vehicles:[],
+        }
+    }
+
+    async loadLuxuryCars(){
+        let res = await vehicleService.fetchVehiclesByStatus("Available");
+        let vehicles = []
+        if (res.status===200){
+            res.data.data.filter(vehicle=>vehicle.type.type.includes('Luxury')).slice(0, 4).map((value, index) => {
+                vehicles.push(value)
+            })
+
+            this.setState({
+                vehicles:vehicles
+            })
+
+        }
+    }
+
+    async componentDidMount() {
+        await this.loadLuxuryCars();
+    }
+
     render() {
         return (
             <Grid
@@ -40,10 +68,14 @@ class LuxuryCars extends Component {
                     className="p-6 w-min"
                 >
                     <Grid container item justifyContent="center" gap={5}>
-                        <VehicleCard />
-                        <VehicleCard />
-                        <VehicleCard />
-                        <VehicleCard />
+                        {this.state.vehicles.map((value) => (
+
+                            <VehicleCard key={value.registration_Number} obj={value}/>
+                        ))}
+                        {/*<VehicleCard />
+            <VehicleCard />
+            <VehicleCard />
+            <VehicleCard />*/}
                     </Grid>
                     <Grid>
                         <CommonButton

@@ -1,7 +1,8 @@
-import { Grid, Link, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React, { Component } from "react";
 import CommonButton from "../../../../components/common/Button";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
+import {Link} from "react-router-dom";
 
 class LoginUser extends Component {
     constructor(props) {
@@ -104,7 +105,7 @@ class LoginUser extends Component {
                                     />
 
                                     <Typography variant="p">
-                                        You are not a member? <Link> Register Now</Link>
+                                        You are not a member? <Link to={'/register'}> Register Now</Link>
                                     </Typography>
                                 </Grid>
                             </ValidatorForm>

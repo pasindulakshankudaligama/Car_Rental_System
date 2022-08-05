@@ -27,7 +27,7 @@ class RentalRequests extends Component {
             //  for data table
             columns: [
                 {
-                    field: "regUserId",
+                    field: "id",
                     headerName: "Booking ID",
                     width: 175,
                 },
@@ -94,21 +94,21 @@ class RentalRequests extends Component {
                             <>
                                 <Tooltip title="Accept Request">
                                     <IconButton className={'bg-green-100 mr-2'} onClick={async () => {
-                                        await this.deleteUser(params.row.regUserId);
+                                        await this.deleteUser(params.row.id);
                                     }}>
                                         <CheckIcon className={'text-green-500'}/>
                                     </IconButton>
                                 </Tooltip>
                                 <Tooltip title="Deny Request">
                                     <IconButton className={'bg-red-100 mr-2 '} onClick={async () => {
-                                        await this.deleteUser(params.row.regUserId);
+                                        await this.deleteUser(params.row.id);
                                     }}>
                                         <CloseIcon className={'text-red-500'}/>
                                     </IconButton>
                                 </Tooltip>
                                 <Tooltip title="View Details">
                                     <IconButton className={'bg-blue-100 '} onClick={async () => {
-                                        await this.deleteUser(params.row.regUserId);
+                                        await this.deleteUser(params.row.id);
                                     }}>
                                         <VisibilityIcon className={'text-blue-500'}/>
                                     </IconButton>
@@ -124,7 +124,7 @@ class RentalRequests extends Component {
     deleteUser = async (id) => {
 
         let params = {
-            regUserId: id,
+            id: id,
         }
         let res = await CustomerService.deleteCustomers(params)
         console.log(res)
@@ -149,7 +149,7 @@ class RentalRequests extends Component {
         let nData = [];
         if (resp.status === 200) {
             resp.data.data.map((value, index) => {
-                value.id = value.regUserId;
+                value.id = value.id;
                 nData.push(value)
             })
 
